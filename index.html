@@ -19,9 +19,9 @@
 </head>
 
 <body>
-    <div class="flexbox">
-        <section class = "player-settings"></div>
-            <div class="player1-settings">
+    <main class="flex-box">
+        <section class = "setup">
+            <div class="player-settings">
                 <h2 id="player-1">Player 1</h2>
                 <h3 id="car-select">Select Car</h3>
                 <select>
@@ -30,18 +30,17 @@
                     <option id="jaguar">Jaguar</option>
                     <option id="ford">Ford</option>
                 </select>
-
             </div>
-            <div class="player2-settings"></div>
-            <h2 id="player-2">Player 2</h2>
-            <h3 id="car-select">Select Car</h3>
-            <select>
-                <option id="lamborghini">Lamborghini</option>
-                <option id="ferrari">Ferrari</option>
-                <option id="jaguar">Jaguar</option>
-                <option id="ford">Ford</option>
-            </select>
-        </div>
+            <div class="player-settings">
+                <h2 id="player-2">Player 2</h2>
+                <h3 id="car-select">Select Car</h3>
+                <select>
+                    <option id="lamborghini">Lamborghini</option>
+                    <option id="ferrari">Ferrari</option>
+                    <option id="jaguar">Jaguar</option>
+                    <option id="ford">Ford</option>
+                </select>
+            </div>  
         </section> 
         <section class="game">
             <button type="button" class="btn btn-secondary btn-lg">START</button>
@@ -52,8 +51,6 @@
             <div class="player-times">
                 <h4 id="player1-time">Player 1 Time:</h4>
                 <p>place-holder</p>
-            </div>
-            <div id="player2-time">
                 <h4 id="player2-time">Player 2 Time:</h4>
                 <p>place-holder</p>
             </div>
@@ -66,7 +63,7 @@
             </button>
             <button type="button" class="btn btn-primary btn-lg">Save Score</button>
         </footer>
-         
+    </main>
     
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"

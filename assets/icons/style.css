@@ -19,3 +19,43 @@ button {
     border-color: #e83ee5;
   }
 
+
+ 
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin-top: 80px;
+}
+
+.setup {
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.player-settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  margin-top:40px;
+  justify-content: space-between;
+  padding: 10px 0 10px;
+ 
+}
+
+.score-capture {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  align-items: start;
+}
