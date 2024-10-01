@@ -13,28 +13,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </head>
 <body>
-    <button type="button" class="btn btn-secondary btn-lg">START</button>
-    
     <div class="flexbox">
         <section class = "player-settings"></div>
             <div class="player1-settings">
                 <h2 id="player-1">Player 1</h2>
                 <h3 id="car-select">Select Car</h3>
-                <button id="lamborghini">Lamborghini</button>
-                <button id="ferrari">Ferrari</button>
-                <button id="jaguar">Jaguar</button>
-                <button id="ford">Ford</button>
+                <select>
+                    <option id="lamborghini">Lamborghini</option>
+                    <option id="ferrari">Ferrari</option>
+                    <option id="jaguar">Jaguar</option>
+                    <option id="ford">Ford</option>
+                </select>
+
             </div>
             <div class="player2-settings"></div>
             <h2 id="player-2">Player 2</h2>
             <h3 id="car-select">Select Car</h3>
-            <button id="lamborghini">Lamborghini</button>
-            <button id="ferrari">Ferrari</button>
-            <button id="jaguar">Jaguar</button>
-            <button id="ford">Ford</button>
+            <select>
+                <option id="lamborghini">Lamborghini</option>
+                <option id="ferrari">Ferrari</option>
+                <option id="jaguar">Jaguar</option>
+                <option id="ford">Ford</option>
+            </select>
         </div>
         </section> 
         <section class="game">
+            <button type="button" class="btn btn-secondary btn-lg">START</button>
             <pre id="player1-car">X                                        X</pre>
             <pre id="player2-car">X                                        X</pre>
         </section>
