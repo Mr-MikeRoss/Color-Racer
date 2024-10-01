@@ -1,0 +1,24 @@
+button {
+    background: linear-gradient(45deg, #c236bf, #e83ee5, #ff6b6b, #ffa36c); /* Colorful gradient */
+    background-size: 400% 400%; 
+    color: rgb(0, 0, 0);
+    font-family: 'Arial', sans-serif;
+    border: 2px solid #a0279b;
+    padding: 5px 40px;
+    font-size: 24px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: background-position 0.5s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: 0.5 ease-in-out; box-shadow:  0.;
+  }
+  
+  button:hover {
+    background-position: 100% 0;
+    box-shadow: 0 0 20px 6px rgba(194, 54, 191, 0.7);
+    border-color: #e83ee5;
+  }
+
+  * {
+    background-color: #e58ae4;
+  }
