@@ -66,7 +66,7 @@ const carImages = {
 // Event listener for Player 1 car selection
 playerOneSelection.addEventListener('change', function (event) {
     const selectedCar = event.target.value; // Get the selected option value for P1
-    
+
     let img = playerOneCar.querySelector('img');
     if (!img) {
         img = document.createElement('img');
@@ -74,7 +74,7 @@ playerOneSelection.addEventListener('change', function (event) {
         img.style.height = "auto";
         playerOneCar.appendChild(img); // Append the image to playerOneCar
     }
-    
+
     // Update the img src based on the selected car
     img.src = carImages[selectedCar] || '';
 });
@@ -82,15 +82,16 @@ playerOneSelection.addEventListener('change', function (event) {
 // Event listener for Player 2 car selection
 playerTwoSelection.addEventListener('change', function (event) {
     const selectedCar = event.target.value; // Get the selected option value for P2
-    
+
     let img = playerTwoCar.querySelector('img');
     if (!img) {
         img = document.createElement('img');
         img.style.width = "100px"; //modify size of the img here
-        img.style.height = "auto"; 
+        img.style.height = "auto";
         playerTwoCar.appendChild(img); // Append the image to playerTwoCar
     }
-    
+
     // Update the img src based on the selected car
     img.src = carImages[selectedCar] || '';
 });
+// 
