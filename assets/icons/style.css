@@ -19,3 +19,90 @@ button {
     border-color: #e83ee5;
   }
 
+
+ 
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin-top: 80px;
+}
+
+.setup {
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.player-settings {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.player-settings select {
+  margin-top: 5px;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+  margin-top:50px;
+  align-items: center;
+  padding: 10px 0 10px;
+}
+
+.game button {
+  width: 50%;
+  align-items: center;
+
+}
+
+.game #player1-car {
+  margin: 40px 0 30px;
+}
+
+
+#player1-car {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.score-capture {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-items: start;
+}
+
+.player1-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0 30px 0;
+}
+.player1-time p {
+  padding: 3px 0 0 10px;
+}
+
+.player2-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0 30px 0;
+}
+
+.player2-time p {
+  padding: 3px 0 0 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+  margin-top: 10px;
+}

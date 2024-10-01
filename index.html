@@ -19,11 +19,9 @@
 </head>
 
 <body>
-    <button type="button" class="btn btn-secondary btn-lg">START</button>
-    
-    <div class="flexbox">
-        <section class = "player-settings"></div>
-            <div class="player1-settings">
+    <main class="flex-box">
+        <section class = "setup">
+            <div class="player-settings">
                 <h2 id="player-1">Player 1</h2>
                 <label id="car-select">Select Car</label>
                 <select id="selection">
@@ -34,7 +32,7 @@
                 </select>
             </div>
 
-            <div class="player2-settings">
+            <div class="player-settings">
                 <h2 id="player-2">Player 2</h2>
                 <label id="car-select">Select Car</label>
                 <select id="selection">
@@ -47,17 +45,20 @@
         </div>
         </section> 
         <section class="game">
-            <pre id="player1-car">X                                        X</pre>
-            <pre id="player2-car">X                                        X</pre>
+            <button type="button" class="btn btn-secondary btn-lg">START</button>
+            <pre id="player1-car">X                                                  X</pre>
+            <pre id="player2-car">X                                                  X</pre>
         </section>
         <section class="score-capture">
             <div class="player-times">
-                <h4 id="player1-time">Player 1 Time:</h4>
-                <p>place-holder</p>
-            </div>
-            <div id="player2-time">
-                <h4 id="player2-time">Player 2 Time:</h4>
-                <p>place-holder</p>
+                <div class="player1-time">
+                    <h4>Player 1 Time:</h4>
+                    <p>place-holder</p>
+                </div>
+                <div class="player2-time">  
+                    <h4 id="player2-time">Player 2 Time:</h4>
+                    <p>place-holder</p>
+                </div> 
             </div>
         </section>
         <footer>
@@ -68,7 +69,7 @@
             </button>
             <button type="button" class="btn btn-primary btn-lg">Save Score</button>
         </footer>
-         
+    </main>
     
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
