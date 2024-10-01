@@ -45,6 +45,9 @@ button {
   justify-content: space-around;
 }
 
+.player-settings select {
+  margin-top: 5px;
+}
 .game {
   display: flex;
   flex-direction: column;
@@ -101,4 +104,5 @@ footer {
   display: flex;
   justify-content: space-between;
   width: 25%;
+  margin-top: 10px;
 }
