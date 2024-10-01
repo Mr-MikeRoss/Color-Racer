@@ -41,21 +41,64 @@ button {
 .player-settings {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .game {
   display: flex;
   flex-direction: column;
-  margin-top:40px;
-  justify-content: space-between;
+  margin-top:50px;
+  align-items: center;
   padding: 10px 0 10px;
- 
+}
+
+.game button {
+  width: 50%;
+  align-items: center;
+
+}
+
+.game #player1-car {
+  margin: 40px 0 30px;
+}
+
+
+#player1-car {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .score-capture {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 40%;
   align-items: start;
+}
+
+.player1-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0 30px 0;
+}
+.player1-time p {
+  padding: 3px 0 0 10px;
+}
+
+.player2-time {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0 30px 0;
+}
+
+.player2-time p {
+  padding: 3px 0 0 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
 }
