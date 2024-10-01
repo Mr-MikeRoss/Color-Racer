@@ -13,7 +13,6 @@ const ferrari = document.querySelector('#ferrari');
 const jaguar = document.querySelector('#jaguar');
 const ford = document.querySelector('#ford');
 
-
 // -----var box above-----------------------------------------------------------------
 
 //Create a function that handles the form submission, grabs the data submitted and saves to cache (localStorage).
@@ -57,35 +56,41 @@ window.addEventListener('load', function () {
 
 // car appearance function for each choice
 // player 1 options
+const carImages = {
+    "Lamborghini": './assets/car-pics/Lamborghini.png',
+    "Ferrari": './assets/car-pics/Ferrari.png',
+    "Jaguar": './assets/car-pics/Jaguar.png',
+    "Ford": './assets/car-pics/Ford.png'
+};
 
+// Event listener for Player 1 car selection
 playerOneSelection.addEventListener('change', function (event) {
-    const selectedCar = event.target.value; // Get the selected option value
-    if (selectedCar === 'Lamborghini') {
-        playerOneCar.textContent = '🚗 Lamborghini'; // Display Lamborghini in player2-car
-    } else if (selectedCar === 'Ferrari') {
-        playerOneCar.textContent = '🚗 Ferrari';
-    } else if (selectedCar === 'Jaguar') {
-        playerOneCar.textContent = '🚗 Jaguar';
-    } else if (selectedCar === 'Ford') {
-        playerOneCar.textContent = '🚗 Ford';
-    } else {
-        playerOneCar.textContent = ''; // Clear the display if another car is selected
+    const selectedCar = event.target.value; // Get the selected option value for P1
+    
+    let img = playerOneCar.querySelector('img');
+    if (!img) {
+        img = document.createElement('img');
+        img.style.width = "100px";   //modify size of the img here
+        img.style.height = "auto";
+        playerOneCar.appendChild(img); // Append the image to playerOneCar
     }
+    
+    // Update the img src based on the selected car
+    img.src = carImages[selectedCar] || '';
 });
 
-// player 2 options
-
+// Event listener for Player 2 car selection
 playerTwoSelection.addEventListener('change', function (event) {
-    const selectedCar = event.target.value; // Get the selected option value
-    if (selectedCar === 'Lamborghini') {
-        playerTwoCar.textContent = '🚗 Lamborghini'; // Display Lamborghini in player2-car
-    } else if (selectedCar === 'Ferrari') {
-        playerTwoCar.textContent = '🚗 Ferrari';
-    } else if (selectedCar === 'Jaguar') {
-        playerTwoCar.textContent = '🚗 Jaguar';
-    } else if (selectedCar === 'Ford') {
-        playerTwoCar.textContent = '🚗 Ford';
-    } else {
-        playerTwoCar.textContent = ''; // Clear the display if another car is selected
+    const selectedCar = event.target.value; // Get the selected option value for P2
+    
+    let img = playerTwoCar.querySelector('img');
+    if (!img) {
+        img = document.createElement('img');
+        img.style.width = "100px"; //modify size of the img here
+        img.style.height = "auto"; 
+        playerTwoCar.appendChild(img); // Append the image to playerTwoCar
     }
+    
+    // Update the img src based on the selected car
+    img.src = carImages[selectedCar] || '';
 });
