@@ -19,17 +19,17 @@ function keyPressHandlerL(event) {
   }
 }
 
-function keyPressHandlerA(event) {
-  event.preventDefault();
+// function keyPressHandlerA(event) {
+//   event.preventDefault();
 
-  if (event.key === "a") {
-  }
-  countPlayer2++;
-}
+//   if (event.key === "a") {
+//   }
+//   countPlayer2++;
+// }
 
 // key press event listeners
 window.addEventListener("keydown", keyPressHandlerL);
-window.addEventListener("keydown", keyPressHandlerA);
+// window.addEventListener("keydown", keyPressHandlerA);
 
 // timer function
 function timeHandler(event) {
