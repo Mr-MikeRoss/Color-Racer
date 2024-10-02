@@ -12,6 +12,9 @@ const lamborghini = document.querySelector('#lamborghini');
 const ferrari = document.querySelector('#ferrari');
 const jaguar = document.querySelector('#jaguar');
 const ford = document.querySelector('#ford');
+// the game
+const startGame = document.getElementById("start-button");
+const scoreGame = document.getElementById("save-score");
 
 // -----var box above-----------------------------------------------------------------
 
@@ -57,10 +60,10 @@ window.addEventListener('load', function () {
 // car appearance function for each choice
 // player 1 options
 const carImages = {
-    "Lamborghini": './assets/car-pics/Lamborghini.png',
-    "Ferrari": './assets/car-pics/Ferrari.png',
-    "Jaguar": './assets/car-pics/Jaguar.png',
-    "Ford": './assets/car-pics/Ford.png'
+    "Lamborghini (Urus)": './assets/car-pics/Lamborghini.png',
+    "Ferrari (458)": './assets/car-pics/Ferrari.png',
+    "Porsche (718 Boxster)": './assets/car-pics/Jaguar.png', // Caution: Modified to porsche!!
+    "Ford (GT40)": './assets/car-pics/Ford.png'
 };
 
 // Event listener for Player 1 car selection
@@ -94,4 +97,8 @@ playerTwoSelection.addEventListener('change', function (event) {
     // Update the img src based on the selected car
     img.src = carImages[selectedCar] || '';
 });
-// 
+
+
+
+
+//------Let the game begin!-----------------------------------------
