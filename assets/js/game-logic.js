@@ -13,7 +13,6 @@ let keyIsPressed = false;
 let count1 = 0;
 let count2 = 0;
 // win condition is count = 106 ~ 127;
-let playGame = true;
 //  --------------------- global var box ----------------------------------------
 
 // Move car functions
@@ -52,38 +51,43 @@ function timeHandler() {
 function gameLoop() {
   // -------------game variables------------------------
   // keyPress event listeners
-  document.addEventListener("keydown", function (event) {
-    
-    if (event.key === "a" && !keyIsPressed) {
-      keyIsPressed = true;
-      moveCar1();
-    }
-  });
+  if (count1 < 126 && count2 < 126) {
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "a" && !keyIsPressed) {
+        keyIsPressed = true;
+        moveCar1();
+      }
+    });
+
+    document.addEventListener("keyup", function (event) {
+      if (event.key === "a") {
+        keyIsPressed = false;
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "l" && !keyIsPressed) {
+        keyIsPressed = true;
+        moveCar2();
+      }
+    });
+
+    document.addEventListener("keyup", function (event) {
+      if (event.key === "l") {
+        keyIsPressed = false;
+      }
+    });
+  } else if (count1 === 126) {
+    clearInterval(player1Interval);
+  } else if (count2 === 126) {
+    clearInterval(player2Interval);
+  } else if (count1 === 126 && count2 === 126) {
+    return;
+  }
+  // timer function event listener.
+
 }
 
-document.addEventListener("keyup", function (event) {
-  if (event.key === "a") {
-    keyIsPressed = false;
-  }
-});
-
-document.addEventListener("keydown", function (event) {
-  if (event.key === "l" && !keyIsPressed) {
-    keyIsPressed = true;
-  }
-  moveCar2();
-});
-
-document.addEventListener("keyup", function (event) {
-  if (event.key === "l") {
-    keyIsPressed = false;
-  }
-});
-
-// game end condition.
-if (count1 === 126 && count2 === 126) {
-  playGame = false;
-}
 
 // game event listener.
 startGame.addEventListener("click", function () {
