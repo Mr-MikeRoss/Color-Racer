@@ -28,8 +28,9 @@
         <section class = "setup">
             <div class="player1-settings">
                 <h2 id="player-1">Player 1</h2>
-                <label id="car-select">Select Car</label>
+                <label id="car-select">Choose Your Ride</label>
                 <select id="selection">
+                <option></option>
                 <option id="lamborghini">Lamborghini (Urus)</option>
                 <option id="ferrari">Ferrari (458)</option>
                 <option id="jaguar">Porsche (718 Boxster)</option>
@@ -39,8 +40,9 @@
 
             <div class="player2-settings">
                 <h2 id="player-2">Player 2</h2>
-                <label id="car-select">Select Car</label>
+                <label id="car-select">Choose Your Ride</label>
                 <select id="selection">
+                <option></option>
                 <option id="lamborghini">Lamborghini (Urus)</option>
                 <option id="ferrari">Ferrari (458)</option>
                 <option id="jaguar">Porsche (718 Boxster)</option>
@@ -50,7 +52,7 @@
         </div>
         </section> 
         <section class="game">
-            <button style="font-family: monospace;" type="button" class="btn btn-secondary btn-lg">START</button>
+            <button style="font-family: monospace;" type="button" class="btn btn-secondary btn-lg" id="start-button">START</button>
             <pre id="player1-car">                              </pre>
             <pre id="player2-car">                              </pre>
         </section>
@@ -58,11 +60,11 @@
             <div class="player-times">
                 <div class="player1-time">
                     <h4>Player 1 Time:</h4>
-                    <p>place-holder</p>
+                    <p>------------</p>
                 </div>
                 <div class="player2-time">  
                     <h4 id="player2-time" style="font-family: monospace;">Player 2 Time:</h4>
-                    <p>place-holder</p>
+                    <p>------------</p>
                 </div> 
             </div>
         </section>
@@ -72,7 +74,7 @@
             <button style="font-family: monospace;" type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Play Again?
             </button>
-            <button type="button" class="btn btn-primary btn-lg" id="save-score-style">Save Score</button>
+            <button type="button" class="btn btn-primary btn-lg" id="save-score">Save Score</button>
         </footer>
     </main>
     

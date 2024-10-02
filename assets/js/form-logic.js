@@ -12,6 +12,9 @@ const lamborghini = document.querySelector('#lamborghini');
 const ferrari = document.querySelector('#ferrari');
 const jaguar = document.querySelector('#jaguar');
 const ford = document.querySelector('#ford');
+// the game
+const startGame = document.getElementById("start-button");
+const scoreGame = document.getElementById("save-score");
 
 // -----var box above-----------------------------------------------------------------
 
@@ -94,3 +97,8 @@ playerTwoSelection.addEventListener('change', function (event) {
     // Update the img src based on the selected car
     img.src = carImages[selectedCar] || '';
 });
+
+
+
+
+//------Let the game begin!-----------------------------------------
