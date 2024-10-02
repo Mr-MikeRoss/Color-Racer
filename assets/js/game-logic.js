@@ -4,93 +4,94 @@ const player1Time = document.getElementById("player1-time");
 const player2Time = document.getElementById("player2-time");
 const startGame = document.getElementById("start-button");
 const scoreGame = document.getElementById("save-score");
-//  --------------------- var box ----------------------------------------
-
-// keyPressHandler - using l and a
-
-// -------------------------------
-let position = 0;
 const speed = 10;
+let player1Interval;
+let player2Interval;
+let position = 0;
 let keyIsPressed = false;
+let count1 = 0;
+let count2 = 0;
+// win condition is count = 106 ~ 127;
+let playGame = true;
+//  --------------------- global var box ----------------------------------------
+
+// Move car functions
 
 function moveCar1() {
-position += speed;
-playerOneCar.style.left = position + 'px';
-};
-
-document.addEventListener('keydown', function(event) {
-  if (event.key === "a" && !keyIsPressed) {
-    keyIsPressed = true;
-    moveCar1();
-  }
-});
-
-document.addEventListener('keyup', function (event) {
-  if (event.key === "a") {
-    keyIsPressed = false;
-  }
-});
+  position += speed;
+  playerOneCar.style.left = position + "px";
+  count1++;
+  console.log(count1);
+}
 
 function moveCar2() {
   position += speed;
-  playerTwoCar.style.left = position + 'px';
-  };
-  
-  document.addEventListener('keydown', function(event) {
-    if (event.key === "l" && !keyIsPressed) {
-      keyIsPressed = true;
-      moveCar2();
-    }
-  });
-  
-  document.addEventListener('keyup', function (event) {
-    if (event.key === "l") {
-      keyIsPressed = false;
-    }
-  });
-
-// -------------------------------
-
-// function keyPressHandlerL(event) {
-// //   event.preventDefault();
-//   while (countPlayer1 < 100) {
-//     if (event.key === "l") {
-//       playerOneCar.style.left += "5px";
-//       countPlayer1++;
-//     }
-    
-//   }
-// }
-
-// function keyPressHandlerA(event) {
-//   event.preventDefault();
-
-//   if (event.key === "a") {
-//   }
-//   countPlayer2++;
-// }
-
-// key press event listeners
-// window.addEventListener("keydown", keyPressHandlerL);
-// window.addEventListener("keydown", keyPressHandlerA);
+  playerTwoCar.style.left = position + "px";
+  count2++;
+  console.log(count2);
+}
 
 // timer function
-function timeHandler(event) {
+function timeHandler() {
   let timeCount1 = 0;
-  setInterval(function timeInterval() {
+  player1Interval = setInterval(function timeInterval() {
     timeCount1++;
     console.log(timeCount1);
     player1Time.textContent = timeCount1;
   }, 1000);
   let timeCount2 = 0;
-  setInterval(function timeInterval() {
+  player2Interval = setInterval(function timeInterval() {
     timeCount2++;
     console.log(timeCount2);
     player2Time.textContent = timeCount2;
   }, 1000);
 }
 
-// timer function event listener.
+// gameLoop
+function gameLoop() {
+  // -------------game variables------------------------
+
+  // keyPress event listeners
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "a" && !keyIsPressed) {
+      keyIsPressed = true;
+      moveCar1();
+    }
+  });
+
+  document.addEventListener("keyup", function (event) {
+    if (event.key === "a") {
+      keyIsPressed = false;
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "l" && !keyIsPressed) {
+      keyIsPressed = true;
+      moveCar2();
+    }
+  });
+
+  document.addEventListener("keyup", function (event) {
+    if (event.key === "l") {
+      keyIsPressed = false;
+    }
+  });
+
+  // timer function event listener.
+  if (count1 === 126) {
+    clearInterval(player1Interval);
+    //pause timer, say player 1 won
+  } else if (count2 === 126) {
+    clearInterval(player2Interval);
+    //pause timer, say player 2 won
+  } else if (count1 === 126 && count2 === 126) {
+    playGame = false;
+  }
+}
+
+// game event listener.
 startGame.addEventListener("click", function () {
   timeHandler();
-});
+  gameLoop();
+}); // when start is clicked the game loop starts
