@@ -5,8 +5,12 @@ const playerTwoName = document.querySelector("#playerTwoName");
 const selection = document.querySelector('#selection');
 const playerOneCar = document.querySelector('#player1-car');
 const playerTwoCar = document.querySelector('#player2-car');
-const playerOneSelection = document.querySelector('.player1-settings #selection')
-const playerTwoSelection = document.querySelector('.player2-settings #selection')
+const playerOneSelection = document.querySelector('.player1-settings #selection');
+const playerTwoSelection = document.querySelector('.player2-settings #selection');
+// const playerOneHeader = document.getElementById("player-1");
+// const playerTwoHeader = document.getElementById("player-2");
+// const playerOneTime = docuemnt.getElementById("player1-time");
+// const playerTwoTime = document.getElementById("player2-time");
 //Create variable for each car options:
 const lamborghini = document.querySelector('#lamborghini');
 const ferrari = document.querySelector('#ferrari');
@@ -34,6 +38,9 @@ function formResponse(event) {
     if (playerOne.name && playerTwo.name) {
         let players = [playerOne, playerTwo];
         localStorage.setItem("players", JSON.stringify(players));
+
+        //TODO: Update the player names on the screen.
+        
 
         // Force close the modal since default action is prevented.
         const modalElement = document.getElementById('staticBackdrop');
