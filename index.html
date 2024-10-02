@@ -19,35 +19,40 @@
 </head>
 
 <body>
+    <nav id="colorful-text">Welcome To The Color Racer</nav>
     <main class="flex-box">
+        <div class="container">
+            <div class="left-section"></div>
+            <div class="right-section"></div>
+        </div>
         <section class = "setup">
-            <div class="player-settings">
+            <div class="player1-settings">
                 <h2 id="player-1">Player 1</h2>
                 <label id="car-select">Select Car</label>
                 <select id="selection">
-                <option id="lamborghini">Lamborghini</option>
-                <option id="ferrari">Ferrari</option>
-                <option id="jaguar">Jaguar</option>
-                <option id="ford">Ford</option>
+                <option id="lamborghini">Lamborghini (Urus)</option>
+                <option id="ferrari">Ferrari (458)</option>
+                <option id="jaguar">Porsche (718 Boxster)</option>
+                <option id="ford">Ford (GT40)</option>
                 </select>
             </div>
 
-            <div class="player-settings">
+            <div class="player2-settings">
                 <h2 id="player-2">Player 2</h2>
                 <label id="car-select">Select Car</label>
                 <select id="selection">
-                <option id="lamborghini">Lamborghini</option>
-                <option id="ferrari">Ferrari</option>
-                <option id="jaguar">Jaguar</option>
-                <option id="ford">Ford</option>
+                <option id="lamborghini">Lamborghini (Urus)</option>
+                <option id="ferrari">Ferrari (458)</option>
+                <option id="jaguar">Porsche (718 Boxster)</option>
+                <option id="ford">Ford (GT40)</option>
                 </select>
             </div>
         </div>
         </section> 
         <section class="game">
-            <button type="button" class="btn btn-secondary btn-lg">START</button>
-            <pre id="player1-car">X                                                  X</pre>
-            <pre id="player2-car">X                                                  X</pre>
+            <button style="font-family: monospace;" type="button" class="btn btn-secondary btn-lg">START</button>
+            <pre id="player1-car">                              </pre>
+            <pre id="player2-car">                              </pre>
         </section>
         <section class="score-capture">
             <div class="player-times">
@@ -56,7 +61,7 @@
                     <p>place-holder</p>
                 </div>
                 <div class="player2-time">  
-                    <h4 id="player2-time">Player 2 Time:</h4>
+                    <h4 id="player2-time" style="font-family: monospace;">Player 2 Time:</h4>
                     <p>place-holder</p>
                 </div> 
             </div>
@@ -64,10 +69,10 @@
         <footer>
             <!-- <button type="button" class="btn btn-primary btn-lg">Play Again?</button> -->
             <!-- Reset Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button style="font-family: monospace;" type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Play Again?
             </button>
-            <button type="button" class="btn btn-primary btn-lg">Save Score</button>
+            <button type="button" class="btn btn-primary btn-lg" id="save-score-style">Save Score</button>
         </footer>
     </main>
     
@@ -93,8 +98,8 @@
                             <input type="text" id="playerTwoName" placeholder="Enter your name." required />
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                            <button style="font-family: cursive;" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button style="font-family: cursive;" type="submit" class="btn btn-primary" id="submit">Submit</button>
                         </div>
                     </form>
                 </div>
