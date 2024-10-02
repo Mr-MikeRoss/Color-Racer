@@ -7,7 +7,8 @@ const scoreGame = document.getElementById("save-score");
 const speed = 10;
 let player1Interval;
 let player2Interval;
-let position = 0;
+let position1 = 0;
+let position2 = 0;
 let keyIsPressed = false;
 let count1 = 0;
 let count2 = 0;
@@ -18,15 +19,15 @@ let playGame = true;
 // Move car functions
 
 function moveCar1() {
-  position += speed;
-  playerOneCar.style.left = position + "px";
+  position1 += speed;
+  playerOneCar.style.left = position1 + "px";
   count1++;
   console.log(count1);
 }
 
 function moveCar2() {
-  position += speed;
-  playerTwoCar.style.left = position + "px";
+  position2 += speed;
+  playerTwoCar.style.left = position2 + "px";
   count2++;
   console.log(count2);
 }
