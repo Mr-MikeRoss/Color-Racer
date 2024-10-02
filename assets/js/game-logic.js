@@ -7,26 +7,26 @@ const scoreGame = document.getElementById("save-score");
 const speed = 10;
 let player1Interval;
 let player2Interval;
-let position = 0;
+let position1 = 0;
+let position2 = 0;
 let keyIsPressed = false;
 let count1 = 0;
 let count2 = 0;
 // win condition is count = 106 ~ 127;
-let playGame = true;
 //  --------------------- global var box ----------------------------------------
 
 // Move car functions
 
 function moveCar1() {
-  position += speed;
-  playerOneCar.style.left = position + "px";
+  position1 += speed;
+  playerOneCar.style.left = position1 + "px";
   count1++;
   console.log(count1);
 }
 
 function moveCar2() {
-  position += speed;
-  playerTwoCar.style.left = position + "px";
+  position2 += speed;
+  playerTwoCar.style.left = position2 + "px";
   count2++;
   console.log(count2);
 }
@@ -50,45 +50,44 @@ function timeHandler() {
 // gameLoop
 function gameLoop() {
   // -------------game variables------------------------
-
   // keyPress event listeners
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "a" && !keyIsPressed) {
-      keyIsPressed = true;
-      moveCar1();
-    }
-  });
+  if (count1 < 126 && count2 < 126) {
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "a" && !keyIsPressed) {
+        keyIsPressed = true;
+        moveCar1();
+      }
+    });
 
-  document.addEventListener("keyup", function (event) {
-    if (event.key === "a") {
-      keyIsPressed = false;
-    }
-  });
+    document.addEventListener("keyup", function (event) {
+      if (event.key === "a") {
+        keyIsPressed = false;
+      }
+    });
 
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "l" && !keyIsPressed) {
-      keyIsPressed = true;
-      moveCar2();
-    }
-  });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "l" && !keyIsPressed) {
+        keyIsPressed = true;
+        moveCar2();
+      }
+    });
 
-  document.addEventListener("keyup", function (event) {
-    if (event.key === "l") {
-      keyIsPressed = false;
-    }
-  });
-
-  // timer function event listener.
-  if (count1 === 126) {
+    document.addEventListener("keyup", function (event) {
+      if (event.key === "l") {
+        keyIsPressed = false;
+      }
+    });
+  } else if (count1 === 126) {
     clearInterval(player1Interval);
-    //pause timer, say player 1 won
   } else if (count2 === 126) {
     clearInterval(player2Interval);
-    //pause timer, say player 2 won
   } else if (count1 === 126 && count2 === 126) {
-    playGame = false;
+    return;
   }
+  // timer function event listener.
+
 }
+
 
 // game event listener.
 startGame.addEventListener("click", function () {
