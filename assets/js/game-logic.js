@@ -8,28 +8,71 @@ const scoreGame = document.getElementById("save-score");
 
 // keyPressHandler - using l and a
 
-function keyPressHandlerL(event) {
-//   event.preventDefault();
-  while (countPlayer1 < 100) {
-    if (event.key === "l") {
-      playerOneCar.style.left += "5px";
-      countPlayer1++;
-    }
-    
+// -------------------------------
+let position = 0;
+const speed = 10;
+let keyIsPressed = false;
+
+function moveCar1() {
+position += speed;
+playerOneCar.style.left = position + 'px';
+};
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === "a" && !keyIsPressed) {
+    keyIsPressed = true;
+    moveCar1();
   }
-}
+});
 
-function keyPressHandlerA(event) {
-  event.preventDefault();
-
+document.addEventListener('keyup', function (event) {
   if (event.key === "a") {
+    keyIsPressed = false;
   }
-  countPlayer2++;
-}
+});
+
+function moveCar2() {
+  position += speed;
+  playerTwoCar.style.left = position + 'px';
+  };
+  
+  document.addEventListener('keydown', function(event) {
+    if (event.key === "l" && !keyIsPressed) {
+      keyIsPressed = true;
+      moveCar2();
+    }
+  });
+  
+  document.addEventListener('keyup', function (event) {
+    if (event.key === "l") {
+      keyIsPressed = false;
+    }
+  });
+
+// -------------------------------
+
+// function keyPressHandlerL(event) {
+// //   event.preventDefault();
+//   while (countPlayer1 < 100) {
+//     if (event.key === "l") {
+//       playerOneCar.style.left += "5px";
+//       countPlayer1++;
+//     }
+    
+//   }
+// }
+
+// function keyPressHandlerA(event) {
+//   event.preventDefault();
+
+//   if (event.key === "a") {
+//   }
+//   countPlayer2++;
+// }
 
 // key press event listeners
-window.addEventListener("keydown", keyPressHandlerL);
-window.addEventListener("keydown", keyPressHandlerA);
+// window.addEventListener("keydown", keyPressHandlerL);
+// window.addEventListener("keydown", keyPressHandlerA);
 
 // timer function
 function timeHandler(event) {
