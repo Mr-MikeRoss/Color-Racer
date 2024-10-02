@@ -1,28 +1,53 @@
-
-
-
+const countPlayer1 = 0;
+const countPlayer2 = 0;
+const player1Time = document.getElementById("player1-time");
+const player2Time = document.getElementById("player2-time");
+const startGame = document.getElementById("start-button");
+const scoreGame = document.getElementById("save-score");
 //  --------------------- var box ----------------------------------------
 
 // keyPressHandler - using l and a
 
-function keyPressHandlerL (event) {
-    event.preventDefault();
-
-    if (event.key === "l"){
-        playerOneCar.setAttribute('left','20px');
+function keyPressHandlerL(event) {
+//   event.preventDefault();
+  while (countPlayer1 < 100) {
+    if (event.key === "l") {
+      playerOneCar.style.left += "5px";
+      countPlayer1++;
     }
+    
+  }
+}
 
-};
-// function keyPressHandlerA (event) {
-//     event.preventDefault();
+function keyPressHandlerA(event) {
+  event.preventDefault();
 
-//     if (event.key === "a"){
+  if (event.key === "a") {
+  }
+  countPlayer2++;
+}
 
-//     }
+// key press event listeners
+window.addEventListener("keydown", keyPressHandlerL);
+window.addEventListener("keydown", keyPressHandlerA);
 
-// };
+// timer function
+function timeHandler(event) {
+  let timeCount1 = 0;
+  setInterval(function timeInterval() {
+    timeCount1++;
+    console.log(timeCount1);
+    player1Time.textContent = timeCount1;
+  }, 1000);
+  let timeCount2 = 0;
+  setInterval(function timeInterval() {
+    timeCount2++;
+    console.log(timeCount2);
+    player2Time.textContent = timeCount2;
+  }, 1000);
+}
 
-
-window.addEventListener('keydown', keyPressHandlerL);
-// window.addEventListener('keydown', keyPressHandlerA);
-
+// timer function event listener.
+startGame.addEventListener("click", function () {
+  timeHandler();
+});
