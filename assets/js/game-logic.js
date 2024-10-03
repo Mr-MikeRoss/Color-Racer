@@ -13,6 +13,8 @@ let position2 = 0;
 let keyIsPressed = false;
 let count1 = 0;
 let count2 = 0;
+let timeCount1 = 0
+let timeCount2 = 0
 // win condition is count = 126
 //  --------------------- global var box ----------------------------------------
 
@@ -55,6 +57,14 @@ function timeHandler() {
   }, 1000);
 }
 
+// Save time to local storage
+function saveTime() {
+  localStorage.setItem('stoppedTime', player1Interval);
+  localStorage.setItem('stoppedTime', player2Interval);
+}
+
+document.getElementById('save-score').addEventListener('click',saveTime);
+//--------------------------------------------------
 // Enables event listers while true, 
 function gameLoop() {
   // keyPress event listeners
