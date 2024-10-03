@@ -13,12 +13,14 @@ let position2 = 0;
 let keyIsPressed = false;
 let count1 = 0;
 let count2 = 0;
+let timeCount1 = 0;
+let timeCount2 = 0;
 // win condition is count = 126
 //  --------------------- global var box ----------------------------------------
 
 // Move car functions only allow movement if respective counts are <= 126.
 function moveCar1() {
-  if (count1 <= 126) {
+  if (count1 <= 90) {
     position1 += speed;
     playerOneCar.style.left = position1 + "px";
     count1++;
@@ -29,7 +31,7 @@ function moveCar1() {
 }
 
 function moveCar2() {
-  if (count2 <= 126) {
+  if (count2 <= 90) {
     position2 += speed;
     playerTwoCar.style.left = position2 + "px";
     count2++;
@@ -41,13 +43,11 @@ function moveCar2() {
 
 // timer function updates player times on screen.
 function timeHandler() {
-  let timeCount1 = 0;
   player1Interval = setInterval(function timeInterval() {
     timeCount1++;
     console.log(timeCount1);
     player1Time.textContent = timeCount1;
   }, 1000);
-  let timeCount2 = 0;
   player2Interval = setInterval(function timeInterval() {
     timeCount2++;
     console.log(timeCount2);
@@ -55,11 +55,19 @@ function timeHandler() {
   }, 1000);
 }
 
+// Save time to local storage
+function saveTime() {
+  localStorage.setItem('player1-time', timeCount1);
+  localStorage.setItem('player2-time', timeCount2);
+}
+
+document.getElementById('save-score').addEventListener('click',saveTime);
+//--------------------------------------------------
 // Enables event listers while true, 
 function gameLoop() {
   // keyPress event listeners
   if (playGame) {
-    if (count1 < 126 && count2 < 126) {
+    if (count1 < 90 && count2 < 90) {
       document.addEventListener("keydown", function (event) {
         if (event.key === "a" && !keyIsPressed) {
           keyIsPressed = true;
@@ -87,7 +95,7 @@ function gameLoop() {
       });
     }
     //Game over condition.
-    if (count1 >= 126 && count2 >= 126) {
+    if (count1 >= 90 && count2 >= 90) {
       playGame = false;
       console.log("Game over.");
     }
