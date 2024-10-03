@@ -16,7 +16,7 @@ let count1 = 0;
 let count2 = 0;
 let timeCount1 = 0;
 let timeCount2 = 0;
-// win condition is count = 126
+// win condition is count = 21
 //  --------------------- global var box ----------------------------------------
 
 // Move car functions only allow movement if respective counts are <= 21.
