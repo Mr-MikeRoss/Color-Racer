@@ -446,3 +446,50 @@ td.highscore-body.bottom {
     }
  }
 
+@media screen and (max-width: 375px) {
+  main {
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .highscore-board {
+    display: none;
+    justify-content: end;
+  }
+
+  #highway {
+    
+  }
+
+  .cars {
+    left: -120px;
+    top: -25px;
+  }
+
+  .player1-time {
+    display: inline;
+    position: relative;
+    height: 40px;
+    left:-100px;
+  }
+
+  .player2-time {
+    display: inline;
+    position: relative;
+    left:-100px;
+  }
+  
+  .Character {
+    position: absolute;
+    bottom: -75px;
+    left: -280px;
+  }
+
+  footer {
+   position: relative;
+    margin-top: -40px;
+    top: -35px;
+  }
+}
