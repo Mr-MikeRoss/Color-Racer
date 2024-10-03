@@ -26,7 +26,7 @@ function moveCar1() {
     count1++;
     console.log(count1);
   } else {
-    clearInterval(player2Interval);
+    clearInterval(player1Interval);
   }
 }
 
