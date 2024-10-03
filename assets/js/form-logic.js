@@ -33,16 +33,17 @@ const highScoreTimes = [
   document.getElementById("highscore3-time"),
 ];
 
+let playerNames;
+
 // -----var box above-----------------------------------------------------------------
 
 //Create a function that handles the form submission, grabs the data submitted and saves to cache (localStorage).
 function formResponse(event) {
   event.preventDefault();
-  
-  // Two player objects created for scalability.
+
   // If statement to check if form fields are complete, then save to storage.
   if (playerOneName.value && playerTwoName.value) {
-    
+    // Two player objects created for scalability.
     const playerOne = {
       name: playerOneName.value,
       time: JSON.parse(localStorage.getItem("player1-time")), //Get p1 time from local storage.
@@ -51,13 +52,12 @@ function formResponse(event) {
       name: playerTwoName.value,
       time: JSON.parse(localStorage.getItem("player2-time")), //Get p2 time from local storage.
     };
-    
+
+    // Get and update players objects array.
     let players = JSON.parse(localStorage.getItem("players")) || [];
     players.push(playerOne);
     players.push(playerTwo);
     localStorage.setItem("players", JSON.stringify(players));
-
-    
 
     //Update the player names on the screen.
     playerOneHeader.textContent = playerOne.name;
@@ -78,6 +78,8 @@ function formResponse(event) {
       backdrop.remove();
     }
   }
+  playerNames = [playerOneName.value, playerTwoName.value];
+  console.log(playerNames);
 }
 
 //Add an event listener to the form on submit.
@@ -87,14 +89,15 @@ formElement.addEventListener("submit", formResponse);
 function updateHighScoreBoard() {
   let players = JSON.parse(localStorage.getItem("players")) || [];
 
-  // takes each player and updates them with time and rewrites a new array.
-  players = players.map(function(player) {
+  // takes each player and updates them with time and rewrites new array using map
+  players = players.map(function (player) {
     if (player.name === playerOneName.value) {
-      let playerOneTime = JSON.parse(localStorage.getItem("player1-time")) || null;
+      let playerOneTime =
+        JSON.parse(localStorage.getItem("player1-time")) || null;
       player.time = playerOneTime;
-    } 
-    else if (player.name === playerTwoName.value) {
-      let playerTwoTime = JSON.parse(localStorage.getItem("player2-time")) || null;
+    } else if (player.name === playerTwoName.value) {
+      let playerTwoTime =
+        JSON.parse(localStorage.getItem("player2-time")) || null;
       player.time = playerTwoTime;
     }
     return player;

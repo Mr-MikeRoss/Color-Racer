@@ -42,6 +42,41 @@ nav {
     clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%); /* Creates the curved effect */
 }
 
+.overlay-text{
+  position: absolute;
+  top: 8%;
+  left: 34%;
+  z-index: 10;
+  padding: 10px;
+  display: none;
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(30deg, #FF5733, #33FF57, #3357FF, #FF33A8, #FF33C1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: monospace;
+  animation: jump 800ms ease-in-out infinite;
+}
+
+@keyframes jump {
+  0%, 15% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-2rem);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-1.5rem); 
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 #colorful-text {
         font-size: 1.5rem;
         background: linear-gradient(30deg, #FF5733, #33FF57, #3357FF, #FF33A8, #FF33C1);
