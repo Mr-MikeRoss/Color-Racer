@@ -61,6 +61,7 @@ function timeHandler() {
 function saveTime() {
   localStorage.setItem('player1-time', timeCount1);
   localStorage.setItem('player2-time', timeCount2);
+  updateHighScoreBoard();
 }
 
 document.getElementById('save-score').addEventListener('click', saveTime);
