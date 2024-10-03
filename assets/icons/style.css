@@ -109,6 +109,7 @@ button {
 .setup {
   display: flex;
   flex-direction: row;
+  padding-top: 30px;
   width: 75%;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -138,24 +139,33 @@ button {
 .game button {
   width: 125px;
   align-items: center;
-
+  position: relative;
+  bottom: 15px;
 }
 
 /* .game #player1-car {
   margin: 40px 0 30px;
 } */
 
+.cars {
+  position: relative;
+  display: flex;
+  width: 100%;
+  left: -650px;
+  top: -40px;
+}
 
 #player1-car {
   position:absolute;
   margin-top: 30px;
-  left: -10px;
+  /* left: 260px; */
 }
 
 #player2-car {
   position:absolute;
-  margin-top: 70px;
-  left: -10px;
+  height: auto;
+  margin-top: 75px;
+  /* left: 260px; */
 }
 
 .score-capture {
@@ -165,52 +175,75 @@ button {
   align-items: start;
 }
 
+.player-times {
+  display: flex;
+  position: relative;
+  bottom: 20px;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
 .player1-clock {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 20px 0 30px 0;
-  font-family: monospace;
 }
-.player1-clock p {
-  padding: 3px 0 0 10px;
+
+.player1-time {
+  display:flex;
+  direction: row;
+  padding-bottom: 20px;
+  height: 80px;
 }
 
 .player2-time {
+  display:flex;
+  direction: row;
+  height: 80px;
+}
+
+#player1-time {
+  position: relative;
+  padding: 0 0 0 10px;
+  font-family: monospace;
+  top:-7px;
+}
+
+.player2-clock {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 20px 0 30px 0;
+ 
   
 }
 
-.player2-time p {
-  padding: 3px 0 0 10px;
+#player2-time {
+  position: relative;
+  padding: 0 0 0 10px;
   font-family: monospace;
+  top: -7px;
 }
 
 #save-score {
   font-family: monospace;
 }
 
-/* ---rev04------------------ */
-
-#player1-time {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: -26px -162px 20px 1px;
+footer {
+  margin-bottom: 40px;
 }
+
+/* ---rev04------------------ */
 /* objects */
 
 .obj-container {
     position: relative;
     display: flex;
+    width: 100%;
+    left: 50px;
 }
 
 #flag {
-
-    position:absolute;
+    position: absolute;
     margin-top: 89px;
     right: -10px;
     width: 100px;
@@ -219,8 +252,8 @@ button {
     top: -80px;
   }
 
-#highway {
-    position:absolute;
+#highway { 
+    position: absolute;
     margin-top: 89px;
     right: -10px;
     width: 1200px;
@@ -230,7 +263,6 @@ button {
 }
 
 #bush {
-
     position:absolute;
     margin-top: 89px;
     right: -10px;
@@ -241,7 +273,6 @@ button {
 }
 
 #tree1 {
-
     position:absolute;
     margin-top: 89px;
     right: -10px;
@@ -252,7 +283,6 @@ button {
 }
 
 #tree2 {
-
     position:absolute;
     margin-top: 89px;
     right: -10px;
