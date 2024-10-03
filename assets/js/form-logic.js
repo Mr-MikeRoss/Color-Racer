@@ -52,13 +52,13 @@ function formResponse(event) {
 }
 
 //Add an event listener to the form on submit.
-formElement.addEventListener('submit', formResponse);
+// formElement.addEventListener('submit', formResponse);
 
-//Show the modal on page load
-window.addEventListener('load', function () {
-    const modalForm = new bootstrap.Modal(document.getElementById('staticBackdrop')); // creates new modal on page load. - https://getbootstrap.com/docs/5.3/getting-started/javascript/#css-selectors-in-constructors
-    modalForm.show();
-});
+// //Show the modal on page load
+// window.addEventListener('load', function () {
+//     const modalForm = new bootstrap.Modal(document.getElementById('staticBackdrop')); // creates new modal on page load. - https://getbootstrap.com/docs/5.3/getting-started/javascript/#css-selectors-in-constructors
+//     modalForm.show();
+// });
 
 
 // car appearance function for each choice

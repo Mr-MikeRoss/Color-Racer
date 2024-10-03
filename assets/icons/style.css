@@ -14,7 +14,6 @@ html, body {
 nav {
     text-align: center;
     margin-top: 18px;
-    /* min-height: 10vh; */
 }
 
 .container {
@@ -66,7 +65,7 @@ nav {
         margin-top: 10px;
       }
 
-/* ------------------------ */
+/* ------rev03------------------ */
 main {
 
 background-color: #628edf;
@@ -194,4 +193,28 @@ button {
     font-family: monospace;
 }
 
+/* ---rev04------------------ */
+
+#player1-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: -26px -162px 20px 1px;
+}
+
+.flag-container {
+    position: relative;
+    display: flex;
+}
+
+.flag {
+
+    position:absolute;
+    margin-top: 89px;
+    right: -10px;
+    width: 100px;
+    height: auto;
+    left: 643px;
+    top: -60px;
+  }
 
