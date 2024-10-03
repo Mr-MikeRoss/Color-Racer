@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <nav id="colorful-text">Welcome To The Color Racer</nav>
+    <nav id="colorful-text" style="font-weight:bold; font-size: xx-large;">Welcome To The Color Racer</nav>
     <main class="flex-box">
         <div class="container">
             <div class="left-section"></div>
@@ -53,8 +53,8 @@
         </div>
         <section class = "setup">
             <div class="player1-settings">
-                <h2 id="player-1">Player 1</h2>
-                <label id="car-select">Choose Your Ride</label>
+                <h2 id="player-1" style="font-weight:bold;">Player 1</h2>
+                <label id="car-select" style="font-size: x-large;">Choose Your Ride</label>
                 <select id="selection">
                 <option></option>
                 <option id="lamborghini">Lamborghini (Urus)</option>
@@ -65,8 +65,8 @@
             </div>
 
             <div class="player2-settings">
-                <h2 id="player-2">Player 2</h2>
-                <label id="car-select">Choose Your Ride</label>
+                <h2 id="player-2" style="font-weight:bold;">Player 2</h2>
+                <label id="car-select" style="font-size: x-large;">Choose Your Ride</label>
                 <select id="selection">
                 <option></option>
                 <option id="lamborghini">Lamborghini (Urus)</option>
@@ -78,9 +78,12 @@
         </div>
         </section> 
         <section class="game">
-            <button style="font-family: monospace;" type="button" class="btn btn-secondary btn-lg" id="start-button">START</button>
+            <button type="button" class="btn btn-secondary btn-lg" id="start-button">START</button>
             <pre id="player1-car">                              </pre>
             <pre id="player2-car">                              </pre>
+            <div class="flag-container">
+                <img src="./assets/car-pics/flag.png" alt="Green Flag Image" class="flag">
+            </div>
         </section>
         <section class="score-capture">
             <div class="player-times">
@@ -97,7 +100,7 @@
         </section>
         <footer>
             <!-- Reset Button trigger modal -->
-            <button style="font-family: monospace;" type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Play Again?
             </button>
             <button type="button" class="btn btn-primary btn-lg" id="save-score">Save Score</button>
