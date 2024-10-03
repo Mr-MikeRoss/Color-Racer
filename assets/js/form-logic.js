@@ -168,9 +168,11 @@ playerOneSelection.addEventListener("change", function (event) {
     img = document.createElement("img");
     img.style.width = "100px"; //modify size of the img here
     img.style.height = "auto";
+    if (window.matchMedia("(max-width: 375px)").matches) {
+      img.style.width = "70px";
+    }
     playerOneCar.appendChild(img); // Append the image to playerOneCar
-  }
-
+  } 
   // Update the img src based on the selected car
   img.src = carImages[selectedCar] || "";
 });
@@ -184,6 +186,9 @@ playerTwoSelection.addEventListener("change", function (event) {
     img = document.createElement("img");
     img.style.width = "100px"; //modify size of the img here
     img.style.height = "auto";
+    if (window.matchMedia("(max-width: 375px)").matches) {
+      img.style.width = "70px";
+    }
     playerTwoCar.appendChild(img); // Append the image to playerTwoCar
   }
 
