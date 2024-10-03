@@ -59,8 +59,8 @@ function formResponse(event) {
     //Update the player names on the screen.
     playerOneHeader.textContent = playerOne.name;
     playerTwoHeader.textContent = playerTwo.name;
-    playerOneClock.textContent = `${playerOne.name} Time:`;
-    playerTwoClock.textContent = `${playerTwo.name} Time:`;
+    playerOneClock.textContent = `${playerOne.name}'s Time:`;
+    playerTwoClock.textContent = `${playerTwo.name}'s Time:`;
 
     updateHighScoreBoard();
 
