@@ -160,7 +160,7 @@ button {
 
 .score-capture {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 40%;
   align-items: start;
 }
@@ -190,7 +190,7 @@ button {
 }
 
 #save-score {
-    font-family: monospace;
+  font-family: monospace;
 }
 
 /* ---rev04------------------ */
@@ -217,4 +217,54 @@ button {
     left: 643px;
     top: -60px;
   }
+/* High Score Board Styles */
+
+.highscore-board{
+  font-family: monospace;
+  position: absolute;
+  top: 100px;
+  left: 45px;
+  color: white;
+}
+.highscore-board tr, .highscore-board th{
+  border-bottom: none;
+}
+
+th.highscore-header{
+  text-align: center; 
+  font-size: 1.5rem; 
+  background: linear-gradient(45deg, #662e62, #f546f2, #ff6b6b, #4492f8); /* Colorful gradient */
+  background-size: 400% 400%; 
+  color: white; 
+  padding: 10px; 
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px; 
+}
+th.highscore-body {
+  text-align: center; /* Center the text in the header cell */
+  background: linear-gradient(45deg,#2c74d2,#cf7af3); 
+  background-size: 400% 400%; 
+  border-top: 1px solid rgba(148, 148, 148, 0.297); /* Subtle dividers */
+  border-bottom: none;
+  padding: 10px; 
+}
+td.highscore-body{
+  text-align: center; 
+  padding: 10px; 
+  border-top: 1px solid rgba(148, 148, 148, 0.297);
+  border-left: 1px solid rgba(148, 148, 148, 0.297);
+  border-bottom: none;
+}
+
+th.highscore-body.bottom {
+  border-bottom-left-radius: 15px;
+}
+
+td.highscore-body.bottom {
+  border-bottom-right-radius: 15px;
+}
+
+.highscore-header{
+  text-align: center;
+}
 

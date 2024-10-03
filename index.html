@@ -25,6 +25,32 @@
             <div class="left-section"></div>
             <div class="right-section"></div>
         </div>
+        <div class="highscore-board">
+            <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th class="highscore-header" scope="col" colspan="4">High Scores</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="highscore-body" scope="row">1</th>
+                    <td class="highscore-body" id="highscore1-name" colspan="2">Mark</td>
+                    <td class="highscore-body" id="highscore1-time">25.00</td>
+                  </tr>
+                  <tr>
+                    <th class="highscore-body" scope="row">2</th>
+                    <td class="highscore-body" id="highscore2-name" colspan="2">Jacob</td>
+                    <td class="highscore-body" id="highscore2-time">29.00</td>
+                  </tr>
+                  <tr>
+                    <th class="highscore-body bottom" scope="row">3</th>
+                    <td class="highscore-body" id="highscore3-name" colspan="2">Larry the Bird</td>
+                    <td class="highscore-body bottom" id="highscore3-time">32.00</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
         <section class = "setup">
             <div class="player1-settings">
                 <h2 id="player-1" style="font-weight:bold;">Player 1</h2>
@@ -62,6 +88,8 @@
         <section class="score-capture">
             <div class="player-times">
                 <div class="player1-time">
+                    <h4 id="player1-clock" style="font-family: monospace;">Player 1 Time:</h4>
+                    <p id="player1-time" >------------</p>
                     <h4 id="player1-clock" style="font-size: x-large;">Player 1 Time:</h4>
                     <p id="player1-time">------------</p>
                 </div>
@@ -70,6 +98,7 @@
                     <p id="player2-time">------------</p>
                 </div> 
             </div>
+            
         </section>
         <footer>
             <!-- Reset Button trigger modal -->
