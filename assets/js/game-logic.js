@@ -20,7 +20,7 @@ let timeCount2 = 0;
 
 // Move car functions only allow movement if respective counts are <= 126.
 function moveCar1() {
-  if (count1 <= 90) {
+  if (count1 <= 126) {
     position1 += speed;
     playerOneCar.style.left = position1 + "px";
     count1++;
@@ -31,7 +31,7 @@ function moveCar1() {
 }
 
 function moveCar2() {
-  if (count2 <= 90) {
+  if (count2 <= 126) {
     position2 += speed;
     playerTwoCar.style.left = position2 + "px";
     count2++;
@@ -67,7 +67,7 @@ document.getElementById('save-score').addEventListener('click',saveTime);
 function gameLoop() {
   // keyPress event listeners
   if (playGame) {
-    if (count1 < 90 && count2 < 90) {
+    if (count1 < 126 && count2 < 126) {
       document.addEventListener("keydown", function (event) {
         if (event.key === "a" && !keyIsPressed) {
           keyIsPressed = true;
@@ -95,7 +95,7 @@ function gameLoop() {
       });
     }
     //Game over condition.
-    if (count1 >= 90 && count2 >= 90) {
+    if (count1 >= 126 && count2 >= 126) {
       playGame = false;
       console.log("Game over.");
     }
@@ -103,6 +103,7 @@ function gameLoop() {
 }
 
 //Game event listener.
+startGame.setAttribute('style', 'z-index: 3;');
 startGame.addEventListener("click", function () {
   timeHandler();
   gameLoop();

@@ -201,22 +201,69 @@ button {
     justify-content: center;
     margin: -26px -162px 20px 1px;
 }
+/* objects */
 
-.flag-container {
+.obj-container {
     position: relative;
     display: flex;
 }
 
-.flag {
+#flag {
 
     position:absolute;
     margin-top: 89px;
     right: -10px;
     width: 100px;
     height: auto;
-    left: 643px;
-    top: -60px;
+    left: 620px;
+    top: -80px;
   }
+
+#highway {
+    position:absolute;
+    margin-top: 89px;
+    right: -10px;
+    width: 1200px;
+    height: 300px;
+    left: -600px;
+    top: -175px;  
+}
+
+#bush {
+
+    position:absolute;
+    margin-top: 89px;
+    right: -10px;
+    width: 100px;
+    height: auto;
+    left: 170px;
+    top: -160px;
+}
+
+#tree1 {
+
+    position:absolute;
+    margin-top: 89px;
+    right: -10px;
+    width: 100px;
+    height: auto;
+    left: 480px;
+    top: -178px;
+}
+
+#tree2 {
+
+    position:absolute;
+    margin-top: 89px;
+    right: -10px;
+    width: 90px;
+    height: auto;
+    left: -580px;
+    top: -178px;
+}
+
+
+
 /* High Score Board Styles */
 
 .highscore-board{
@@ -267,4 +314,70 @@ td.highscore-body.bottom {
 .highscore-header{
   text-align: center;
 }
+
+/* animated character */
+
+:root {
+    --pixel-size: 6;
+ }
+ 
+ .Character {
+    width: calc(22px * var(--pixel-size));
+    height: calc(22px * var(--pixel-size));
+    overflow: hidden;
+    position: fixed;
+    margin: 4em auto;
+    bottom: -35px;
+    right: 20px;
+
+ }
+
+ .Character:hover::after {
+    content: " hello world!";
+    border: 1px solid black;
+    font-family: monospace;
+    font-style: normal;
+    position: absolute;
+    display: block;
+    left: 1px;
+    top: 10px;
+    cursor: wait;
+ }
+ 
+ .Character_spritesheet {
+    animation: moveSpritesheet 1s steps(4) infinite;
+    width: calc(70px * var(--pixel-size));
+    position: absolute;
+    
+ }
+ .Character_shadow {
+    position: absolute;
+    width: calc(70% * var(--pixel-size));
+    color: black;
+ }
+ 
+ .pixelart {
+    image-rendering: pixelated;
+ }
+ 
+ .face-right {
+    top: calc(-32px * var(--pixel-size));
+ }
+ .face-up {
+    top: calc(-64px * var(--pixel-size));
+ }
+ .face-left {
+    top: calc(-96px * var(--pixel-size));
+    font-size: large;
+ }
+ 
+ 
+ @keyframes moveSpritesheet {
+    from {
+       transform: translate3d(0px,0,0)
+    }
+    to {
+       transform: translate3d(-100%,0,0)
+    }
+ }
 
