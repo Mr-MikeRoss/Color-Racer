@@ -149,6 +149,7 @@ button {
 
 .cars {
   position: relative;
+  display: flex;
   width: 100%;
   left: -650px;
   top: -40px;
@@ -187,6 +188,7 @@ button {
   flex-direction: row;
   justify-content: center;
   
+  
 }
 
 .player1-time {
@@ -206,7 +208,7 @@ button {
   position: relative;
   padding: 0 0 0 10px;
   font-family: monospace;
-  font-size:larger;
+  top:-7px;
 }
 
 .player2-clock {
@@ -221,7 +223,7 @@ button {
   position: relative;
   padding: 0 0 0 10px;
   font-family: monospace;
-  font-size:larger;
+  top: -7px;
 }
 
 #save-score {
