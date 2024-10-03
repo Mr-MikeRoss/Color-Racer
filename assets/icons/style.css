@@ -183,11 +183,11 @@ button {
 } */
 
 .cars {
-  position: relative;
+  position: absolute;
   display: flex;
   width: 100%;
-  left: -650px;
-  top: -40px;
+  left: -35vw;
+  top: -5vh;
 }
 
 #player1-car {

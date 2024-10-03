@@ -5,7 +5,7 @@ const player2Time = document.getElementById("player2-time");
 const startGame = document.getElementById("start-button");
 const scoreGame = document.getElementById("save-score");
 const winText = document.getElementById("overlay-text");
-const speed = 10;
+const speed = 3;
 let playGame = true;
 let player1Interval;
 let player2Interval;
@@ -19,11 +19,11 @@ let timeCount2 = 0;
 // win condition is count = 126
 //  --------------------- global var box ----------------------------------------
 
-// Move car functions only allow movement if respective counts are <= 126.
+// Move car functions only allow movement if respective counts are <= 21.
 function moveCar1() {
-  if (count1 <= 126) {
+  if (count1 <= 21) {
     position1 += speed;
-    playerOneCar.style.left = position1 + "px";
+    playerOneCar.style.left = position1 + "vw";
     count1++;
   } else {
     clearInterval(player1Interval);
@@ -31,9 +31,9 @@ function moveCar1() {
 }
 
 function moveCar2() {
-  if (count2 <= 126) {
+  if (count2 <= 21) {
     position2 += speed;
-    playerTwoCar.style.left = position2 + "px";
+    playerTwoCar.style.left = position2 + "vw";
     count2++;
   } else {
     clearInterval(player2Interval);
@@ -67,7 +67,7 @@ document.getElementById("save-score").addEventListener("click", saveTime);
 function gameLoop() {
   // keyPress event listeners
   if (playGame) {
-    if (count1 < 126 && count2 < 126) {
+    if (count1 < 21 && count2 < 21) {
       document.addEventListener("keydown", function (event) {
         if (event.key === "a" && !keyIsPressed) {
           keyIsPressed = true;
@@ -96,7 +96,7 @@ function gameLoop() {
     }
     //Game over check set at an interval of one second
     const checkGameOver = setInterval(function () {
-      if (count1 >= 126 && count2 >= 126) {
+      if (count1 >= 21 && count2 >= 21) {
         playGame = false;
         clearInterval(checkGameOver);
         console.log("Game over.");
