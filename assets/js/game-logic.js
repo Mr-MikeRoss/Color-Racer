@@ -26,7 +26,7 @@ function moveCar1() {
     count1++;
     console.log(count1);
   } else {
-    clearInterval(player1Interval);
+    clearInterval(player2Interval);
   }
 }
 
@@ -46,12 +46,14 @@ function timeHandler() {
   player1Interval = setInterval(function timeInterval() {
     timeCount1++;
     console.log(timeCount1);
-    player1Time.textContent = timeCount1;
+    player1Time.textContent = `${timeCount1} sec`;
+    player1Time.style = ('font-size:xx-large');
   }, 1000);
   player2Interval = setInterval(function timeInterval() {
     timeCount2++;
     console.log(timeCount2);
-    player2Time.textContent = timeCount2;
+    player2Time.textContent = `${timeCount2} sec`;
+    player2Time.style = ('font-size:xx-large');
   }, 1000);
 }
 
@@ -59,9 +61,10 @@ function timeHandler() {
 function saveTime() {
   localStorage.setItem('player1-time', timeCount1);
   localStorage.setItem('player2-time', timeCount2);
+  updateHighScoreBoard();
 }
 
-document.getElementById('save-score').addEventListener('click',saveTime);
+document.getElementById('save-score').addEventListener('click', saveTime);
 //--------------------------------------------------
 // Enables event listers while true, 
 function gameLoop() {
@@ -100,6 +103,8 @@ function gameLoop() {
       console.log("Game over.");
     }
   }
+
+
 }
 
 //Game event listener.

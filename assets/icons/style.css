@@ -359,11 +359,10 @@ td.highscore-body.bottom {
     margin: 4em auto;
     bottom: -35px;
     right: 20px;
-
  }
 
  .Character:hover::after {
-    content: " hello world!";
+    content: "hello world!";
     border: 1px solid black;
     font-family: monospace;
     font-style: normal;
@@ -372,6 +371,7 @@ td.highscore-body.bottom {
     left: 1px;
     top: 10px;
     cursor: wait;
+    padding: 3px;  
  }
  
  .Character_spritesheet {

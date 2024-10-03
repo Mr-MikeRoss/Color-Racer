@@ -25,12 +25,12 @@ const ford = document.querySelector("#ford");
 const highScoreNames = [
   document.getElementById("highscore1-name"),
   document.getElementById("highscore2-name"),
-  document.getElementById("highscore3-name")
+  document.getElementById("highscore3-name"),
 ];
 const highScoreTimes = [
   document.getElementById("highscore1-time"),
   document.getElementById("highscore2-time"),
-  document.getElementById("highscore3-time")
+  document.getElementById("highscore3-time"),
 ];
 
 // -----var box above-----------------------------------------------------------------
@@ -38,23 +38,26 @@ const highScoreTimes = [
 //Create a function that handles the form submission, grabs the data submitted and saves to cache (localStorage).
 function formResponse(event) {
   event.preventDefault();
+  
   // Two player objects created for scalability.
-  const playerOne = {
-    name: playerOneName.value,
-    time: 0, //TODO: Get time from local storage.
-  };
-
-  const playerTwo = {
-    name: playerTwoName.value,
-    time: 0, //TODO: Get time from local storage.
-  };
-
-  // If statement to check if fields are complete, then save to storage. Temporarily hardcoded.
-  if (playerOne.name && playerTwo.name) {
+  // If statement to check if form fields are complete, then save to storage.
+  if (playerOneName.value && playerTwoName.value) {
+    
+    const playerOne = {
+      name: playerOneName.value,
+      time: JSON.parse(localStorage.getItem("player1-time")), //Get p1 time from local storage.
+    };
+    const playerTwo = {
+      name: playerTwoName.value,
+      time: JSON.parse(localStorage.getItem("player2-time")), //Get p2 time from local storage.
+    };
+    
     let players = JSON.parse(localStorage.getItem("players")) || [];
     players.push(playerOne);
     players.push(playerTwo);
     localStorage.setItem("players", JSON.stringify(players));
+
+    
 
     //Update the player names on the screen.
     playerOneHeader.textContent = playerOne.name;
@@ -62,9 +65,10 @@ function formResponse(event) {
     playerOneClock.textContent = `${playerOne.name}'s Time:`;
     playerTwoClock.textContent = `${playerTwo.name}'s Time:`;
 
+    //Update high score board from local storage
     updateHighScoreBoard();
 
-    //         // Force close the modal since default action is prevented.
+    // Force close the modal since default action is prevented.
     const modalElement = document.getElementById("staticBackdrop");
     const modal = bootstrap.Modal.getInstance(modalElement); // method gets bootstrap modal - https://getbootstrap.com/docs/5.3/components/buttons/#methods
     // Find backdrop div element created by bootstrap when modal is rendered in the DOM.
@@ -78,6 +82,62 @@ function formResponse(event) {
 
 //Add an event listener to the form on submit.
 formElement.addEventListener("submit", formResponse);
+
+//updateHighScoreBoard function
+function updateHighScoreBoard() {
+  let players = JSON.parse(localStorage.getItem("players")) || [];
+
+  // takes each player and updates them with time and rewrites a new array.
+  players = players.map(function(player) {
+    if (player.name === playerOneName.value) {
+      let playerOneTime = JSON.parse(localStorage.getItem("player1-time")) || null;
+      player.time = playerOneTime;
+    } 
+    else if (player.name === playerTwoName.value) {
+      let playerTwoTime = JSON.parse(localStorage.getItem("player2-time")) || null;
+      player.time = playerTwoTime;
+    }
+    return player;
+  });
+
+  // clear times froom local storage
+  localStorage.removeItem("player1-time");
+  localStorage.removeItem("player2-time");
+
+  // Save the updated players back to local storage
+  localStorage.setItem("players", JSON.stringify(players));
+
+  // Sort players by time, handle null or undefined times
+  players.sort((a, b) => {
+    if (a.time === null || a.time === undefined) return 1; // Push null/undefined to the end https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+    if (b.time === null || b.time === undefined) return -1;
+    return a.time - b.time;
+  });
+
+  // Get top 3 players
+  const topPlayers = players.slice(0, 3); // No need for the fallback slice
+
+  // Fill with N/A if less than 3 players.
+  while (topPlayers.length < 3) {
+    topPlayers.push({ name: "N/A", time: "N/A" });
+  }
+
+  // Update high score board display
+  for (let i = 0; i < topPlayers.length; i++) {
+    // Handle missing player names or times
+    if (topPlayers[i]) {
+      highScoreNames[i].textContent = topPlayers[i].name || "N/A";
+      if (topPlayers[i].time !== null && topPlayers[i].time !== undefined) {
+        highScoreTimes[i].textContent = topPlayers[i].time;
+      } else {
+        highScoreTimes[i].textContent = "N/A";
+      }
+    } else {
+      highScoreNames[i].textContent = "N/A";
+      highScoreTimes[i].textContent = "N/A";
+    }
+  }
+}
 
 //Show the modal on page load
 window.addEventListener("load", function () {
@@ -127,21 +187,4 @@ playerTwoSelection.addEventListener("change", function (event) {
   // Update the img src based on the selected car
   img.src = carImages[selectedCar] || "";
 });
-
-function updateHighScoreBoard() {
-  let players = JSON.parse(localStorage.getItem("players")) || [];
-
-  players.sort((a, b) => a.time - b.time); //sort function is confusing https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-
-  //top 3 players
-  const topPlayers = players.slice(0, 3) || players.slice(0, 2);
-  console.log(topPlayers);
-
-  //update high score board display
-  for (let i = 0; i < topPlayers.length; i++) {
-    highScoreNames[i].textContent = topPlayers[i].name;
-    highScoreTimes[i].textContent = topPlayers[i].time.toFixed(2);
-  }
-}
-
 //------Let the game begin!-----------------------------------------
