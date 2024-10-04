@@ -1,3 +1,6 @@
+const gameMusic = new Audio("./assets/sounds/Initial-D.mp3");
+
+// Game control variables
 const countPlayer1 = 0;
 const countPlayer2 = 0;
 const player1Time = document.getElementById("player1-time");
@@ -5,7 +8,7 @@ const player2Time = document.getElementById("player2-time");
 const startGame = document.getElementById("start-button");
 const scoreGame = document.getElementById("save-score");
 const winText = document.getElementById("overlay-text");
-const speed = 3;
+const speed = 1;
 let playGame = true;
 let player1Interval;
 let player2Interval;
@@ -16,12 +19,12 @@ let count1 = 0;
 let count2 = 0;
 let timeCount1 = 0;
 let timeCount2 = 0;
-// win condition is count = 21
+// win condition is count = 63
 //  --------------------- global var box ----------------------------------------
 
 // Move car functions only allow movement if respective counts are <= 21.
 function moveCar1() {
-  if (count1 <= 21) {
+  if (count1 <= 63) {
     position1 += speed;
     playerOneCar.style.left = position1 + "vw";
     count1++;
@@ -31,7 +34,7 @@ function moveCar1() {
 }
 
 function moveCar2() {
-  if (count2 <= 21) {
+  if (count2 <= 63) {
     position2 += speed;
     playerTwoCar.style.left = position2 + "vw";
     count2++;
@@ -79,7 +82,7 @@ document.getElementById("save-score").addEventListener("click", saveTime);
 function gameLoop() {
   // keyPress event listeners
   if (playGame) {
-    if (count1 < 21 && count2 < 21) {
+    if (count1 < 63 && count2 < 63) {
       document.addEventListener("keydown", function (event) {
         if (event.key === "a" && !keyIsPressed) {
           keyIsPressed = true;
@@ -108,18 +111,23 @@ function gameLoop() {
     }
     //Game over check set at an interval of one second
     const checkGameOver = setInterval(function () {
-      if (count1 >= 21 && count2 >= 21) {
+      if (count1 >= 63 && count2 >= 63) {
         playGame = false;
         clearInterval(checkGameOver);
         console.log("Game over.");
 
+        // Stop audio at race finish
+        gameMusic.pause();
+
         // Winner banner conditional update
         if (timeCount1 < timeCount2) {
           //player one wins
-          winText.textContent = `${playerNames[0]} is the Winner!`;
+          winText.textContent =
+            `${playerNames[0]} is the Winner!` || "Player 1 is the Winner!";
         } else if (timeCount2 < timeCount1) {
           //player two wins
-          winText.textContent = `${playerNames[1]} is the Winner!`;
+          winText.textContent =
+            `${playerNames[1]} is the Winner!` || "Player 2 is the Winner!";
         }
         winText.style.display = "block"; // make it visable
       }
@@ -132,4 +140,7 @@ startGame.setAttribute("style", "z-index: 3;");
 startGame.addEventListener("click", function () {
   timeHandler();
   gameLoop();
+
+  gameMusic.play();
+  gameMusic.loop = true;
 }); // when start is clicked the game loop starts
