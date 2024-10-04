@@ -2,14 +2,14 @@
 const formElement = document.getElementById("form");
 const playerOneName = document.querySelector("#playerOneName");
 const playerTwoName = document.querySelector("#playerTwoName");
-const selection = document.querySelector("#selection");
+const selection = document.querySelector(".selection");
 const playerOneCar = document.querySelector("#player1-car");
 const playerTwoCar = document.querySelector("#player2-car");
 const playerOneSelection = document.querySelector(
-  ".player1-settings #selection"
+  ".player1-settings .selection"
 );
 const playerTwoSelection = document.querySelector(
-  ".player2-settings #selection"
+  ".player2-settings .selection"
 );
 //Time variables
 const playerOneHeader = document.getElementById("player-1");
@@ -172,7 +172,7 @@ playerOneSelection.addEventListener("change", function (event) {
       img.style.width = "70px";
     }
     playerOneCar.appendChild(img); // Append the image to playerOneCar
-  } 
+  }
   // Update the img src based on the selected car
   img.src = carImages[selectedCar] || "";
 });
