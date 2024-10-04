@@ -446,7 +446,46 @@ td.highscore-body.bottom {
     }
  }
 
-@media screen and (max-width: 375px) {
+
+@media screen  and (max-width: 768px) {
+  main {
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .highscore-board {
+    top: 590px;
+    left: 10px;
+  }
+
+  .player1-time {
+    position: relative;
+    left: 50px;
+  }
+
+  .player2-time {
+    position: relative;
+    left: 50px;
+  }
+
+  #player1-time {
+    padding-top: 4px;
+
+  }
+
+  #player2-time {
+    padding-top: 4px;
+  }
+
+  .cars {
+    left: -315px;
+    top: -40px;
+  }
+}
+
+ @media screen and (max-width: 375px) {
   main {
     height: 100vh;
     width: 100%;

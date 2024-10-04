@@ -49,6 +49,9 @@ function timeHandler() {
     if (window.matchMedia("(max-width: 375px)").matches) {
       player1Time.style = "font-size: 14px";
     }
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      player1Time.style = "font-size: 20px";
+    }
   }, 1000);
   player2Interval = setInterval(function timeInterval() {
     timeCount2++;
@@ -56,6 +59,9 @@ function timeHandler() {
     player2Time.style = "font-size:xx-large";
     if (window.matchMedia("(max-width: 375px)").matches) {
       player2Time.style = "font-size: 14px";
+    }
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      player2Time.style = "font-size: 20px";
     }
   }, 1000);
 }
