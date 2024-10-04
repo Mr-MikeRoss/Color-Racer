@@ -1,5 +1,10 @@
 # Color Racer
 
+## Deployed Link
+
+You can play the game by visiting the following link:  
+[Color Racer - Play Now](https://mr-mikeross.github.io/Color-Racer/)
+
 
 ## Project Overview
 
@@ -8,26 +13,26 @@ Color Racer is a two-player racing game created as the first project for a codin
 
 ## Description
 
-Color Racer is an interactive typing competition where two players race to move their selected cars across the screen. The goal is to reach the finish line in the least amount of time. Players can start the game, save their scores, and play again, with their scores saved locally for future reference.
+Color Racer is an interactive typing competition where two users race to move their selected cars across the screen. The goal is to reach the finish line in the least amount of time. users can start the game, save their scores, and play again, with their scores saved locally for future reference.
 
 
 ## Usage
 
-1. **Enter Name**: When players enter the webpage, they are prompted to enter their name.
-2. **Choose a Car**: After providing their name, players select their car from a list of colorful options.
+1. **Enter Name**: When users enter the webpage, they are prompted to enter their name.
+2. **Choose a Car**: After providing their name, users select their car from a list of colorful options.
 3. **Start the Game**: After selecting a car, the "Start" button begins the race and make the clock counting.
-4. **Typing Race**: Players race by typing as fast as possible to move their cars toward the finish line.
-5. **Save Score**: Once the race ends, players can click the "Save Score" button to save their time to local storage.
-6. **Play Again**: Players can click the "Play Again" button to restart the game and try to beat their previous score.
+4. **Typing Race**: users race by typing as fast as possible to move their cars toward the finish line.
+5. **Save Score**: Once the race ends, users can click the "Save Score" button to save their time to local storage.
+6. **Play Again**: users can click the "Play Again" button to restart the game and try to beat their previous score.
 
 
 ## Game Features
 
-- **Event Handling**: The game utilizes `keydown` and `keyup` events to capture player input during the race.
+- **Event Handling**: The game utilizes `keydown` and `keyup` events to capture user input during the race.
 - **Timer**: A timer starts when the "Start" button is clicked and tracks the duration of the race.
-- **Local Storage**: Scores are saved in local storage, allowing players to track their performance over multiple games.
-- **Interactive Design**: Players can select colorful cars and race each other in real-time.
-- **Play Again & Save Score**: After a race, players can save their scores and restart the game to improve their results.
+- **Local Storage**: Scores are saved in local storage, allowing users to track their performance over multiple games.
+- **Interactive Design**: users can select colorful cars and race each other in real-time.
+- **Play Again & Save Score**: After a race, users can save their scores and restart the game to improve their results.
 
 
 ## Installation
@@ -49,7 +54,7 @@ N/A
 
 ## License
 
-MIT LICENSE.
+MIT License
 
 
 ## Contributors
@@ -58,4 +63,7 @@ MIT LICENSE.
 - Parsa M
 - Michael T
 
+
 Enjoy the game and may the fastest typer win!
+
+Oct 2024
