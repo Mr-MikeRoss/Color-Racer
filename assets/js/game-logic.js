@@ -19,12 +19,12 @@ let count1 = 0;
 let count2 = 0;
 let timeCount1 = 0;
 let timeCount2 = 0;
-// win condition is count = 63
+// win condition is count = 75
 //  --------------------- global var box ----------------------------------------
 
 // Move car functions only allow movement if respective counts are <= 21.
 function moveCar1() {
-  if (count1 <= 63) {
+  if (count1 <= 65) {
     position1 += speed;
     playerOneCar.style.left = position1 + "vw";
     count1++;
@@ -34,7 +34,7 @@ function moveCar1() {
 }
 
 function moveCar2() {
-  if (count2 <= 63) {
+  if (count2 <= 65) {
     position2 += speed;
     playerTwoCar.style.left = position2 + "vw";
     count2++;
@@ -82,7 +82,7 @@ document.getElementById("save-score").addEventListener("click", saveTime);
 function gameLoop() {
   // keyPress event listeners
   if (playGame) {
-    if (count1 < 63 && count2 < 63) {
+    if (count1 < 65 && count2 < 65) {
       document.addEventListener("keydown", function (event) {
         if (event.key === "a" && !keyIsPressed) {
           keyIsPressed = true;
@@ -111,7 +111,7 @@ function gameLoop() {
     }
     //Game over check set at an interval of one second
     const checkGameOver = setInterval(function () {
-      if (count1 >= 63 && count2 >= 63) {
+      if (count1 >= 65 && count2 >= 65) {
         playGame = false;
         clearInterval(checkGameOver);
         console.log("Game over.");
