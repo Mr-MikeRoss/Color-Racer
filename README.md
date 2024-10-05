@@ -9,6 +9,10 @@ You can play the game by visiting the following link:
 
 Color Racer is a two-player racing game created as the first project for a coding bootcamp. The game is designed to test the typing speed of each player using `keydown` and `keyup` event listeners. Players race by typing as fast as they can to reach the finish line.
 
+## Project Presentation
+
+[Project Presentation Google Slides](https://docs.google.com/presentation/d/1Wh_gvfGB_JiPKMIMLj1nQsofCW4F3Ll-92OlZDqjNuE/edit?usp=sharing)
+
 ## Description
 
 Color Racer is an interactive typing competition where two users race to move their selected cars across the screen. The goal is to reach the finish line in the least amount of time. users can start the game, save their scores, and play again, with their scores saved locally for future reference.

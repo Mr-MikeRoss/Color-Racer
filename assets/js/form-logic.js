@@ -32,61 +32,19 @@ const highScoreTimes = [
   document.getElementById("highscore2-time"),
   document.getElementById("highscore3-time"),
 ];
+//Submit button
+const playAgainButton = document.getElementById("play-again");
 
 let playerNames;
-let clickCount = 0;
 
 // -----var box above-----------------------------------------------------------------
 
 //Create a function that handles the form submission, grabs the data submitted and saves to cache (localStorage).
 function formResponse(event) {
   event.preventDefault();
-
-  if (clickCount === 0) {
-    // If statement to check if form fields are complete, then save to storage.
-    if (playerOneName.value && playerTwoName.value) {
-      // Two player objects created for scalability.
-      const playerOne = {
-        name: playerOneName.value,
-        time: JSON.parse(localStorage.getItem("player1-time")), //Get p1 time from local storage.
-      };
-      const playerTwo = {
-        name: playerTwoName.value,
-        time: JSON.parse(localStorage.getItem("player2-time")), //Get p2 time from local storage.
-      };
-
-      // Get and update players objects array.
-      let players = JSON.parse(localStorage.getItem("players")) || [];
-      players.push(playerOne);
-      players.push(playerTwo);
-      localStorage.setItem("players", JSON.stringify(players));
-
-      //Update the player names on the screen.
-      playerOneHeader.textContent = playerOne.name;
-      playerTwoHeader.textContent = playerTwo.name;
-      playerOneClock.textContent = `${playerOne.name}'s Time:`;
-      playerTwoClock.textContent = `${playerTwo.name}'s Time:`;
-
-      //Update high score board from local storage
-      updateHighScoreBoard();
-
-      // Force close the modal since default action is prevented.
-      const modalElement = document.getElementById("staticBackdrop");
-      const modal = bootstrap.Modal.getInstance(modalElement); // method gets bootstrap modal - https://getbootstrap.com/docs/5.3/components/buttons/#methods
-      // Find backdrop div element created by bootstrap when modal is rendered in the DOM.
-      const backdrop = document.querySelector(".modal-backdrop");
-      if (modal && backdrop) {
-        modal.hide();
-        backdrop.remove();
-      }
-
-      clickCount++;
-    }
-    playerNames = [playerOneName.value, playerTwoName.value];
-    console.log(playerNames);
-  } else if (clickCount >= 1) {
-    location.reload(); // Reload the page.
-
+  // If statement to check if form fields are complete, then save to storage.
+  if (playerOneName.value && playerTwoName.value) {
+    // Two player objects created for scalability.
     const playerOne = {
       name: playerOneName.value,
       time: JSON.parse(localStorage.getItem("player1-time")), //Get p1 time from local storage.
@@ -120,11 +78,12 @@ function formResponse(event) {
       modal.hide();
       backdrop.remove();
     }
-  }
-}
 
-//Add an event listener to the form on submit.
-formElement.addEventListener("submit", formResponse);
+    clickCount++;
+  }
+  playerNames = [playerOneName.value, playerTwoName.value];
+  console.log(playerNames);
+}
 
 //updateHighScoreBoard function
 function updateHighScoreBoard() {
@@ -189,6 +148,13 @@ window.addEventListener("load", function () {
     document.getElementById("staticBackdrop")
   ); // creates new modal on page load. - https://getbootstrap.com/docs/5.3/getting-started/javascript/#css-selectors-in-constructors
   modalForm.show();
+});
+
+//Add an event listener to the form on submit.
+formElement.addEventListener("submit", formResponse);
+
+playAgainButton.addEventListener("click", function () {
+  location.reload(); // Reload the page.
 });
 
 // car appearance function for each choice
