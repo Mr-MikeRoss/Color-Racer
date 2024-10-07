@@ -48,24 +48,24 @@ function timeHandler() {
   player1Interval = setInterval(function timeInterval() {
     timeCount1++;
     player1Time.textContent = `${timeCount1} sec`;
-    player1Time.style = "font-size:xx-large";
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      player1Time.style = "font-size: 20px";
-    }
-    if (window.matchMedia("(max-width: 375px)").matches) {
-      player1Time.style = "font-size: 14px";
-    }
+    // player1Time.style = "font-size:xx-large";
+    // if (window.matchMedia("(max-width: 768px)").matches) {
+    //   player1Time.style = "font-size: 20px";
+    // }
+    // if (window.matchMedia("(max-width: 375px)").matches) {
+    //   player1Time.style = "font-size: 14px";
+    // }
   }, 1000);
   player2Interval = setInterval(function timeInterval() {
     timeCount2++;
     player2Time.textContent = `${timeCount2} sec`;
-    player2Time.style = "font-size:xx-large";
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      player2Time.style = "font-size: 20px";
-    }
-    if (window.matchMedia("(max-width: 375px)").matches) {
-      player2Time.style = "font-size: 14px";
-    }
+    // player2Time.style = "font-size:xx-large";
+    // if (window.matchMedia("(max-width: 768px)").matches) {
+    //   player2Time.style = "font-size: 20px";
+    // }
+    // if (window.matchMedia("(max-width: 375px)").matches) {
+    //   player2Time.style = "font-size: 14px";
+    // }
   }, 1000);
 }
 
