@@ -233,7 +233,10 @@ button:hover {
 .score-capture {
   display: flex;
   flex-direction: row;
-  width: 40%;
+  position: relative;
+  top: -2vh;
+  left: -30vw;
+  width: 45%;
   align-items: start;
 }
 
