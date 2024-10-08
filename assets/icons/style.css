@@ -1,60 +1,48 @@
 /* --rev02-- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-  font-family: monospace;
-  color: rgb(0, 0, 0);
+html, body {
+    height: 93%;
+    font-family: monospace;
+    color: rgb(0, 0, 0);
 }
 
 nav {
-  text-align: center;
-  margin-top: 18px;
+    text-align: center;
+    margin-top: 18px;
 }
 
 .container {
-  position: relative;
-  width: 100%;
-  height: 93vw;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.left-section,
-.right-section {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;
+.left-section, .right-section {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
 }
 
 .left-section {
-  background-color: #460858; /* Blue */
-  left: 30px;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    80% 100%,
-    0% 100%
-  ); /* Creates the curved effect */
+    background-color: #460858; /* Blue */
+    left: 30px;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%); /* Creates the curved effect */
 }
 
 .right-section {
-  background-color: #9f4de2; /* Red */
-  right: 30px;
-  clip-path: polygon(
-    20% 0,
-    100% 0,
-    100% 100%,
-    0% 100%
-  ); /* Creates the curved effect */
+    background-color: #9f4de2; /* Red */
+    right: 30px;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%); /* Creates the curved effect */
 }
 
-.overlay-text {
+.overlay-text{
   position: absolute;
   top: 8%;
   left: 34%;
@@ -63,14 +51,7 @@ nav {
   display: none;
   font-size: 3rem;
   font-weight: bold;
-  background: linear-gradient(
-    30deg,
-    #ff5733,
-    #33ff57,
-    #3357ff,
-    #ff33a8,
-    #ff33c1
-  );
+  background: linear-gradient(30deg, #FF5733, #33FF57, #3357FF, #FF33A8, #FF33C1);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -79,8 +60,7 @@ nav {
 }
 
 @keyframes jump {
-  0%,
-  15% {
+  0%, 15% {
     transform: translateY(0);
   }
   30% {
@@ -90,7 +70,7 @@ nav {
     transform: translateY(0);
   }
   75% {
-    transform: translateY(-1.5rem);
+    transform: translateY(-1.5rem); 
   }
   100% {
     transform: translateY(0);
@@ -98,68 +78,60 @@ nav {
 }
 
 #colorful-text {
-  font-size: 1.5rem;
-  background: linear-gradient(
-    30deg,
-    #ff5733,
-    #33ff57,
-    #3357ff,
-    #ff33a8,
-    #ff33c1
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  font-family: monospace;
+        font-size: 1.5rem;
+        background: linear-gradient(30deg, #FF5733, #33FF57, #3357FF, #FF33A8, #FF33C1);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-family: monospace;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        
+    }
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-footer {
-  display: flex;
-  justify-content: space-between;
-  width: 25%;
-  margin-top: 10px;
-}
+    footer {
+        display: flex;
+        justify-content: space-between;
+        width: 25%;
+        margin-top: 10px;
+      }
 
 /* ------rev03------------------ */
 main {
-  background-color: #628edf;
-  height: 100vh;
-  width: 100%;
+
+background-color: #628edf;
+
 }
+
 
 button {
-  background: linear-gradient(
-    45deg,
-    #662e62,
-    #f546f2,
-    #ff6b6b,
-    #4492f8
-  ); /* Colorful gradient */
-  background-size: 400% 400%;
-  color: rgb(0, 0, 0);
-  font-family: "Arial", sans-serif;
-  border: 2px solid #a0279b;
-  padding: 5px 40px;
-  font-size: 24px;
-  letter-spacing: 2px;
-  cursor: pointer;
-  border-radius: 999px;
-  transition: 0.3s ease-in-out;
-}
+    background: linear-gradient(45deg, #662e62, #f546f2, #ff6b6b, #4492f8); /* Colorful gradient */
+    background-size: 400% 400%; 
+    color: rgb(0, 0, 0);
+    font-family: 'Arial', sans-serif;
+    border: 2px solid #a0279b;
+    padding: 5px 40px;
+    font-size: 24px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: 0.3s ease-in-out;
 
-button:hover {
-  background-position: 100% 0;
-  box-shadow: 0 0 20px 6px rgba(194, 54, 191, 0.7);
-  border-color: #e83ee5;
-  cursor: crosshair;
-}
+  }
+  
+  button:hover {
+    background-position: 100% 0;
+    box-shadow: 0 0 20px 6px rgba(194, 54, 191, 0.7);
+    border-color: #e83ee5;
+    cursor: crosshair;
+  }
 
+
+ 
 .flex-box {
   display: flex;
   flex-direction: column;
@@ -192,11 +164,12 @@ button:hover {
 .game {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top:50px;
   align-items: center;
   min-height: 30vh;
   padding: 10px 0 10px;
 }
+
 
 .game button {
   width: 125px;
@@ -218,13 +191,13 @@ button:hover {
 }
 
 #player1-car {
-  position: absolute;
+  position:absolute;
   margin-top: 30px;
   /* left: 260px; */
 }
 
 #player2-car {
-  position: absolute;
+  position:absolute;
   height: auto;
   margin-top: 75px;
   /* left: 260px; */
@@ -233,47 +206,58 @@ button:hover {
 .score-capture {
   display: flex;
   flex-direction: row;
-  position: relative;
-  top: -2vh;
-  left: -30vw;
-  width: 45%;
+  width: 100%;
+  max-width: 850px;
+  height: 100%;
   align-items: start;
+  justify-content: space-between;
 }
 
 .player-times {
   display: flex;
   position: relative;
-  right: -45vw;
-  bottom: 20px;
+  bottom: 30px;
   flex-direction: column;
+  margin-left: 20px;
   margin-bottom: 20px;
+}
 
+.player1-clock {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .player1-time {
-  display: flex;
+  display:flex;
   direction: row;
   padding-bottom: 20px;
-  min-height: 80px;
-  font-family: monospace;
-  
+  height: 80px;
 }
 
 .player2-time {
-  display: flex;
+  display:flex;
   direction: row;
-  min-height: 80px;
-  font-family: monospace;
+  height: 80px;
 }
 
-#player1-clock, #player2-clock {
-  font-family: monospace;
-  line-height: 4.5;
-}
-
-#player1-time, #player2-time {
+#player1-time {
   position: relative;
-  line-height: inherit;
+  padding: 0 0 0 10px;
+  font-family: monospace;
+  top:-7px;
+}
+
+.player2-clock {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+ 
+  
+}
+
+#player2-time {
+  position: relative;
   padding: 0 0 0 10px;
   font-family: monospace;
   top: -7px;
@@ -291,102 +275,101 @@ footer {
 /* objects */
 
 .obj-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
+    position: relative;
+    display: flex;
+    width: 100%;
+    left: 50px;
 }
 
 #flag {
-  position: absolute;
-  margin-top: 89px;
-  right: -10px;
-  width: 100px;
-  height: auto;
-  left: 32vw;
-  top: -80px;
-}
+    position: absolute;
+    margin-top: 89px;
+    right: -10px;
+    width: 100px;
+    height: auto;
+    left: 620px;
+    top: -80px;
+  }
 
-#highway {
-  position: absolute;
-  margin-top: 89px;
-  right: -10px;
-  width: 1200px;
-  height: 300px;
-  left: -600px;
-  top: -175px;
+#highway { 
+    position: absolute;
+    margin-top: 89px;
+    right: -10px;
+    width: 1200px;
+    height: 300px;
+    left: -600px;
+    top: -175px;  
 }
 
 #bush {
-  position: absolute;
-  margin-top: 89px;
-  right: -10px;
-  width: 100px;
-  height: auto;
-  left: 170px;
-  top: -160px;
+    position:absolute;
+    margin-top: 89px;
+    right: -10px;
+    width: 100px;
+    height: auto;
+    left: 170px;
+    top: -160px;
 }
 
 #tree1 {
-  position: absolute;
-  margin-top: 89px;
-  right: -10px;
-  width: 100px;
-  height: auto;
-  left: 480px;
-  top: -178px;
+    position:absolute;
+    margin-top: 89px;
+    right: -10px;
+    width: 100px;
+    height: auto;
+    left: 480px;
+    top: -178px;
 }
 
 #tree2 {
-  position: absolute;
-  margin-top: 89px;
-  right: -10px;
-  width: 90px;
-  height: auto;
-  left: -580px;
-  top: -178px;
+    position:absolute;
+    margin-top: 89px;
+    right: -10px;
+    width: 90px;
+    height: auto;
+    left: -580px;
+    top: -178px;
 }
+
+
 
 /* High Score Board Styles */
 
-.highscore-board {
+.highscore-board{
   font-family: monospace;
-  position: absolute;
-  top: 100px;
-  left: 45px;
+  position: relative;
+  height: 100%;
   color: white;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  bottom: 30px;
+  flex-shrink: 1;
 }
-.highscore-board tr,
-.highscore-board th {
+.highscore-board tr, .highscore-board th{
   border-bottom: none;
 }
 
-th.highscore-header {
-  text-align: center;
-  font-size: 1.5rem;
-  background: linear-gradient(
-    45deg,
-    #662e62,
-    #f546f2,
-    #ff6b6b,
-    #4492f8
-  ); /* Colorful gradient */
-  background-size: 400% 400%;
-  color: white;
-  padding: 10px;
+th.highscore-header{
+  text-align: center; 
+  font-size: 1.5rem; 
+  background: linear-gradient(45deg, #662e62, #f546f2, #ff6b6b, #4492f8); /* Colorful gradient */
+  background-size: 400% 400%; 
+  color: white; 
+  padding: 10px; 
   border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-top-right-radius: 15px; 
 }
 th.highscore-body {
   text-align: center; /* Center the text in the header cell */
-  background: linear-gradient(45deg, #2c74d2, #cf7af3);
-  background-size: 400% 400%;
+  background: linear-gradient(45deg,#2c74d2,#cf7af3); 
+  background-size: 400% 400%; 
   border-top: 1px solid rgba(148, 148, 148, 0.297); /* Subtle dividers */
   border-bottom: none;
-  padding: 10px;
+  padding: 10px; 
 }
-td.highscore-body {
-  text-align: center;
-  padding: 10px;
+td.highscore-body{
+  text-align: center; 
+  padding: 10px; 
   border-top: 1px solid rgba(148, 148, 148, 0.297);
   border-left: 1px solid rgba(148, 148, 148, 0.297);
   border-bottom: none;
@@ -400,103 +383,82 @@ td.highscore-body.bottom {
   border-bottom-right-radius: 15px;
 }
 
-.highscore-header {
+.highscore-header{
   text-align: center;
 }
 
 /* animated character */
 
 :root {
-  --pixel-size: 6;
-}
+    --pixel-size: 6;
+ }
+ 
+ .Character {
+    width: calc(22px * var(--pixel-size));
+    height: calc(22px * var(--pixel-size));
+    overflow: hidden;
+    position: absolute;
+    margin: 4em auto;
+    top: 75%;
+    left: 1%;
+ }
 
-.Character {
-  width: calc(22px * var(--pixel-size));
-  height: calc(22px * var(--pixel-size));
-  overflow: hidden;
-  position: fixed;
-  margin: 4em auto;
-  bottom: -35px;
-  right: 20px;
-}
+ .Character:hover::after {
+    content: "hello world!";
+    border: 1px solid black;
+    font-family: monospace;
+    font-style: normal;
+    position: absolute;
+    display: block;
+    left: 1px;
+    top: 10px;
+    cursor: wait;
+    padding: 3px;  
+ }
+ 
+ .Character_spritesheet {
+    animation: moveSpritesheet 1s steps(4) infinite;
+    width: calc(70px * var(--pixel-size));
+    position: absolute;
+    
+ }
+ .Character_shadow {
+    position: absolute;
+    width: calc(70% * var(--pixel-size));
+    color: black;
+ }
+ 
+ .pixelart {
+    image-rendering: pixelated;
+ }
+ 
+ .face-right {
+    top: calc(-32px * var(--pixel-size));
+ }
+ .face-up {
+    top: calc(-64px * var(--pixel-size));
+ }
+ .face-left {
+    top: calc(-96px * var(--pixel-size));
+    font-size: large;
+ }
+ 
+ 
+ @keyframes moveSpritesheet {
+    from {
+       transform: translate3d(0px,0,0)
+    }
+    to {
+       transform: translate3d(-100%,0,0)
+    }
+ }
 
-.Character:hover::after {
-  content: "hello world!";
-  border: 1px solid black;
-  font-family: monospace;
-  font-style: normal;
-  position: absolute;
-  display: block;
-  left: 1px;
-  top: 10px;
-  cursor: wait;
-  padding: 3px;
-}
-
-.Character_spritesheet {
-  animation: moveSpritesheet 1s steps(4) infinite;
-  width: calc(70px * var(--pixel-size));
-  position: absolute;
-}
-.Character_shadow {
-  position: absolute;
-  width: calc(70% * var(--pixel-size));
-  color: black;
-}
-
-.pixelart {
-  image-rendering: pixelated;
-}
-
-.face-right {
-  top: calc(-32px * var(--pixel-size));
-}
-.face-up {
-  top: calc(-64px * var(--pixel-size));
-}
-.face-left {
-  top: calc(-96px * var(--pixel-size));
-  font-size: large;
-}
-
-@keyframes moveSpritesheet {
-  from {
-    transform: translate3d(0px, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@media screen and (max-width: 1772px) {
+@media screen  and (max-width: 768px) {
   main {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
-  }
-
-  .highscore-board {
-    top: 590px;
-    left: 10px;
-  }
-
-  .player1-time {
-    position: relative;
-    left: 50px;
-  }
-
-  .player2-time {
-    position: relative;
-    left: 50px;
-  }
-
-  #player1-time {
-    padding-top: 4px;
-  }
-
-  #player2-time {
-    padding-top: 4px;
   }
 
   .cars {
@@ -505,111 +467,19 @@ td.highscore-body.bottom {
   }
 }
 
-@media screen and (max-width: 900px) {
+ @media screen and (max-width: 375px) {
   main {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
-  }
-
-  .highscore-board {
-    top: 590px;
-    left: 10px;
-  }
-
-  .player1-time {
-    position: relative;
-    left: 50px;
-  }
-
-  .player2-time {
-    position: relative;
-    left: 50px;
-  }
-
-  #player1-time {
-    padding-top: 4px;
-  }
-
-  #player2-time {
-    padding-top: 4px;
-  }
-
-  .cars {
-    left: -315px;
-    top: -40px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  main {
-    height: 100vh;
-    width: 100%;
-    overflow-y: hidden;
-    overflow-x: hidden;
-  }
-
-  .highscore-board {
-    top: 590px;
-    left: 10px;
-  }
-
-  .player1-time {
-    position: relative;
-    left: 50px;
-  }
-
-  .player2-time {
-    position: relative;
-    left: 50px;
-  }
-
-  #player1-time {
-    padding-top: 4px;
-  }
-
-  #player2-time {
-    padding-top: 4px;
-  }
-
-  .cars {
-    left: -315px;
-    top: -40px;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  main {
-    height: 100vh;
-    width: 100%;
-    overflow-y: hidden;
-    overflow-x: hidden;
-  }
-
-  .highscore-board {
-    display: none;
-    justify-content: end;
   }
 
   .cars {
     left: -120px;
     top: -25px;
   }
-
-  .player1-time {
-    display: inline;
-    position: relative;
-    height: 40px;
-    left: -100px;
-  }
-
-  .player2-time {
-    display: inline;
-    position: relative;
-    left: -100px;
-  }
-
+  
   .Character {
     position: absolute;
     bottom: -75px;
@@ -617,7 +487,7 @@ td.highscore-body.bottom {
   }
 
   footer {
-    position: relative;
+   position: relative;
     margin-top: -40px;
     top: -35px;
   }

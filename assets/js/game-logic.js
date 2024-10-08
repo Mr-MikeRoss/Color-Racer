@@ -26,7 +26,7 @@ let timeCount2 = 0;
 function moveCar1() {
   if (count1 <= 65) {
     position1 += speed;
-    playerOneCar.style.left = position1 + "vw";
+    playerOneCar.style.left = position1 + "%";
     count1++;
   } else {
     clearInterval(player1Interval);
@@ -36,7 +36,7 @@ function moveCar1() {
 function moveCar2() {
   if (count2 <= 65) {
     position2 += speed;
-    playerTwoCar.style.left = position2 + "vw";
+    playerTwoCar.style.left = position2 + "%";
     count2++;
   } else {
     clearInterval(player2Interval);

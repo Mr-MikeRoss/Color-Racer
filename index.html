@@ -30,32 +30,6 @@
             <div class="right-section"></div>
             <div class="overlay-text" id="overlay-text"></div>
         </div>
-        <div class="highscore-board">
-            <table class="table table-sm">
-                <thead>
-                    <tr>
-                        <th class="highscore-header" scope="col" colspan="4">High Scores</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th class="highscore-body" scope="row">1</th>
-                        <td class="highscore-body" id="highscore1-name" colspan="2">Gary the Snail</td>
-                        <td class="highscore-body" id="highscore1-time">25.00</td>
-                    </tr>
-                    <tr>
-                        <th class="highscore-body" scope="row">2</th>
-                        <td class="highscore-body" id="highscore2-name" colspan="2">Barry the Bear</td>
-                        <td class="highscore-body" id="highscore2-time">29.00</td>
-                    </tr>
-                    <tr>
-                        <th class="highscore-body bottom" scope="row">3</th>
-                        <td class="highscore-body" id="highscore3-name" colspan="2">Larry the Bird</td>
-                        <td class="highscore-body bottom" id="highscore3-time">32.00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
         <section class="setup">
             <div class="player1-settings">
                 <h2 id="player-1" style="font-weight:bold;">Player 1</h2>
@@ -109,16 +83,45 @@
                 </div>
                 <div class="player2-time">
                     <h4 id="player2-clock">Player 2 Time:<span id="player2-time"></span></h4>
+
                 </div>
+            </div>
+            <div class="highscore-board">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th class="highscore-header" scope="col" colspan="4">High Scores</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="highscore-body" scope="row">1</th>
+                            <td class="highscore-body" id="highscore1-name" colspan="2">Gary the Snail</td>
+                            <td class="highscore-body" id="highscore1-time">25.00</td>
+                        </tr>
+                        <tr>
+                            <th class="highscore-body" scope="row">2</th>
+                            <td class="highscore-body" id="highscore2-name" colspan="2">Barry the Bear</td>
+                            <td class="highscore-body" id="highscore2-time">29.00</td>
+                        </tr>
+                        <tr>
+                            <th class="highscore-body bottom" scope="row">3</th>
+                            <td class="highscore-body" id="highscore3-name" colspan="2">Larry the Bird</td>
+                            <td class="highscore-body bottom" id="highscore3-time">32.00</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
         </section>
+        <section class="score-buttons">
+            <button type="button" class="btn btn-primary btn-lg" id="save-score">Save Score</button>
+            <button type="button" class="btn btn-primary btn-lg" id="play-again">Play Again</button>
+            </div>
+        </section>
         <footer>
             <!-- Reset Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" id="play-again">
-                Play Again
-            </button>
-            <button type="button" class="btn btn-primary btn-lg" id="save-score">Save Score</button>
+            
         </footer>
     </main>
 
