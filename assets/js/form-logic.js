@@ -78,8 +78,6 @@ function formResponse(event) {
       modal.hide();
       backdrop.remove();
     }
-
-    clickCount++;
   }
   playerNames = [playerOneName.value, playerTwoName.value];
   console.log(playerNames);

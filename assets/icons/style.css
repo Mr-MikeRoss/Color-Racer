@@ -259,7 +259,7 @@ button:hover {
 .player1-time,
 .player2-time {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 80px;
 }
 
