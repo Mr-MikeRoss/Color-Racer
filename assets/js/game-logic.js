@@ -95,6 +95,39 @@ function gameLoop() {
         }
       });
     }
+    // Enable touch events for player 1 and player 2 movement
+
+    // Player 1 touch event (left side of the screen)
+    document.addEventListener("touchstart", function (event) {
+      // Check if the touch is on the left side of the screen
+      // https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
+      // https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/touches
+      // Client X is a read-only property that returns the X coordinate of the touch point relative to viewport
+      //, not including scroll offset https://developer.mozilla.org/en-US/docs/Web/API/Touch/clientX
+      if (event.touches[0].clientX < window.innerWidth / 2 && !keyIsPressed) {
+        keyIsPressed = true;
+        moveCar1();
+      }
+    });
+
+    document.addEventListener("touchend", function (event) {
+      // Release the touch to stop the movement
+      keyIsPressed = false;
+    });
+
+    // Player 2 touch event (right side of the screen)
+    document.addEventListener("touchstart", function (event) {
+      // Check if the touch is on the right side of the screen
+      if (event.touches[0].clientX >= window.innerWidth / 2 && !keyIsPressed) {
+        keyIsPressed = true;
+        moveCar2();
+      }
+    });
+
+    document.addEventListener("touchend", function (event) {
+      // Release the touch to stop the movement
+      keyIsPressed = false;
+    });
     //Game over check set at an interval of one second
     const checkGameOver = setInterval(function () {
       if (count1 >= 19 && count2 >= 19) {
