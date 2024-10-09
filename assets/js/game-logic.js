@@ -8,7 +8,7 @@ const player2Time = document.getElementById("player2-time");
 const startGame = document.getElementById("start-button");
 const scoreGame = document.getElementById("save-score");
 const winText = document.getElementById("overlay-text");
-const speed = 1;
+const speed = 3;
 let playGame = true;
 let player1Interval;
 let player2Interval;
@@ -24,9 +24,9 @@ let timeCount2 = 0;
 
 // Move car functions only allow movement if respective counts are <= 21.
 function moveCar1() {
-  if (count1 <= 65) {
+  if (count1 <= 19) {
     position1 += speed;
-    playerOneCar.style.left = position1 + "vw";
+    playerOneCar.style.left = position1 + "%";
     count1++;
   } else {
     clearInterval(player1Interval);
@@ -34,9 +34,9 @@ function moveCar1() {
 }
 
 function moveCar2() {
-  if (count2 <= 65) {
+  if (count2 <= 19) {
     position2 += speed;
-    playerTwoCar.style.left = position2 + "vw";
+    playerTwoCar.style.left = position2 + "%";
     count2++;
   } else {
     clearInterval(player2Interval);
@@ -48,24 +48,10 @@ function timeHandler() {
   player1Interval = setInterval(function timeInterval() {
     timeCount1++;
     player1Time.textContent = `${timeCount1} sec`;
-    player1Time.style = "font-size:xx-large";
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      player1Time.style = "font-size: 20px";
-    }
-    if (window.matchMedia("(max-width: 375px)").matches) {
-      player1Time.style = "font-size: 14px";
-    }
   }, 1000);
   player2Interval = setInterval(function timeInterval() {
     timeCount2++;
     player2Time.textContent = `${timeCount2} sec`;
-    player2Time.style = "font-size:xx-large";
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      player2Time.style = "font-size: 20px";
-    }
-    if (window.matchMedia("(max-width: 375px)").matches) {
-      player2Time.style = "font-size: 14px";
-    }
   }, 1000);
 }
 
@@ -82,7 +68,7 @@ document.getElementById("save-score").addEventListener("click", saveTime);
 function gameLoop() {
   // keyPress event listeners
   if (playGame) {
-    if (count1 < 65 && count2 < 65) {
+    if (count1 < 19 && count2 < 19) {
       document.addEventListener("keydown", function (event) {
         if (event.key === "a" && !keyIsPressed) {
           keyIsPressed = true;
@@ -109,9 +95,42 @@ function gameLoop() {
         }
       });
     }
+    // Enable touch events for player 1 and player 2 movement
+
+    // Player 1 touch event (left side of the screen)
+    document.addEventListener("touchstart", function (event) {
+      // Check if the touch is on the left side of the screen
+      // https://developer.mozilla.org/en-US/docs/Web/API/Touch_events
+      // https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent/touches
+      // Client X is a read-only property that returns the X coordinate of the touch point relative to viewport
+      //, not including scroll offset https://developer.mozilla.org/en-US/docs/Web/API/Touch/clientX
+      if (event.touches[0].clientX < window.innerWidth / 2 && !keyIsPressed) {
+        keyIsPressed = true;
+        moveCar1();
+      }
+    });
+
+    document.addEventListener("touchend", function (event) {
+      // Release the touch to stop the movement
+      keyIsPressed = false;
+    });
+
+    // Player 2 touch event (right side of the screen)
+    document.addEventListener("touchstart", function (event) {
+      // Check if the touch is on the right side of the screen
+      if (event.touches[0].clientX >= window.innerWidth / 2 && !keyIsPressed) {
+        keyIsPressed = true;
+        moveCar2();
+      }
+    });
+
+    document.addEventListener("touchend", function (event) {
+      // Release the touch to stop the movement
+      keyIsPressed = false;
+    });
     //Game over check set at an interval of one second
     const checkGameOver = setInterval(function () {
-      if (count1 >= 65 && count2 >= 65) {
+      if (count1 >= 19 && count2 >= 19) {
         playGame = false;
         clearInterval(checkGameOver);
         console.log("Game over.");
