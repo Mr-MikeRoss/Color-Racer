@@ -142,11 +142,11 @@ function gameLoop() {
         if (timeCount1 < timeCount2) {
           //player one wins
           winText.textContent =
-            `${playerNames[0]} is the Winner!` || "Player 1 is the Winner!";
+            `${playerOneName.value} is the Winner!` || "Player 1 is the Winner!";
         } else if (timeCount2 < timeCount1) {
           //player two wins
           winText.textContent =
-            `${playerNames[1]} is the Winner!` || "Player 2 is the Winner!";
+            `${playerTwoName.value} is the Winner!` || "Player 2 is the Winner!";
         }
         winText.style.display = "block"; // make it visable
       }
