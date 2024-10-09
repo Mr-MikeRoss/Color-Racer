@@ -58,7 +58,7 @@ nav {
 .overlay-text {
   position: absolute;
   top: 8%;
-  left: 34%;
+  text-align: center;
   z-index: 10;
   padding: 10px;
   display: none;
@@ -163,7 +163,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   height: 100%;
   width: 100%;
   margin-top: 20px;
