@@ -533,3 +533,21 @@ td.highscore-body.bottom {
     left: 50%;
   }
 }
+
+@media screen and (max-height: 668px) {
+  .score-capture {
+    position: relative;
+    bottom: 54%;
+    left: 8%;
+  }
+  .player-times {
+    flex-direction: column;
+    bottom: 25%;
+    right: 5%;
+  }
+
+  .obj-container {
+    top: 20%;
+    right: 15%
+  }
+}
